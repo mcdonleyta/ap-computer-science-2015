@@ -33,10 +33,9 @@ public class Map {
         public ArrayList <Ghost> ghosts = new ArrayList();
         
         final public void display() {
-			for(int a = 0; a < 15; a++) { // clear the terminal
-				System.out.println();
-			}
-			
+            for(int a = 0; a < 15; a++) {
+                System.out.println();
+            }
             ArrayList <ArrayList <Character> > toDisplay = new ArrayList();
             for(int a = 0; a < entities.size(); a++) {
                 ArrayList<Character> tempRow = new ArrayList();
