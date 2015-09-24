@@ -1,18 +1,29 @@
 package pacman;
 
-public class Entity
-{
+public class Entity {
+	
+	private char myDisplayEntity;
 
-		private char myDisplayEntity;
-		
-		public void setDisplayEntity(char ascii)
-		{
-			//Eventually add checks and safety stuff
-			myDisplayEntity = ascii;
-		}
-		
-		public char getDisplayEntity()
-		{
-			return myDisplayEntity;
-		}
+	public Boolean active = true;
+
+	public void setDisplayEntity(char ascii) {
+		myDisplayEntity = ascii;
+	}
+
+	public char getDisplayEntity() {
+		return myDisplayEntity;
+	}
+
+	public void setActive(Boolean input) {
+		active = input;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	Entity() {
+		myDisplayEntity = '.';
+	}
+
 }
