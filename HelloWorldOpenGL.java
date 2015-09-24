@@ -46,7 +46,7 @@ public class HelloWorld {
  
         // Configure our window
         glfwDefaultWindowHints(); // optional, the current window hints are already the default
-        glfwWindowHint(GLFW_VISIBLE, GL_FALSE); // the window will stay hidden after creation
+        glfwWindowHint(GLFW_VISIBLE, GL_TRUE); // the window will stay hidden after creation
         glfwWindowHint(GLFW_RESIZABLE, GL_TRUE); // the window will be resizable
  
         int WIDTH = 300;

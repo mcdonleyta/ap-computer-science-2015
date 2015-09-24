@@ -1,4 +1,4 @@
-package pacman;
+import pacman.*;
 
 public class Pacman {
     
@@ -11,6 +11,7 @@ public class Pacman {
             map.display();
             map.doTurn();
         }
+        map.display();
         
         
     }

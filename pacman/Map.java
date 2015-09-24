@@ -23,22 +23,19 @@ public class Map {
             }
         }
         
-        public void decrementNumberOfDots() {
-            numberOfDots--;
-        }
-        
         public boolean didWin() {
+            countDots();
             return numberOfDots <= 0;
         }
     
-        public List <List <Entity>> entities = new ArrayList();
+        public ArrayList <ArrayList <Entity>> entities = new ArrayList();
         public Player player;
-        public List <Ghost> ghosts = new ArrayList();
+        public ArrayList <Ghost> ghosts = new ArrayList();
         
         final public void display() {
-            List <List <Character> > toDisplay = new ArrayList();
+            ArrayList <ArrayList <Character> > toDisplay = new ArrayList();
             for(int a = 0; a < entities.size(); a++) {
-                List<Character> tempRow = new ArrayList();
+                ArrayList<Character> tempRow = new ArrayList();
                 for(int b = 0; b < entities.get(a).size(); b++) {
                     tempRow.add(entities.get(a).get(b).getDisplayChar());
                 }
@@ -62,7 +59,7 @@ public class Map {
             BufferedReader reader = new BufferedReader(new FileReader(new File(getClass().getResource("BlankBoard.txt").getPath())));
             String line;
             while((line = reader.readLine()) != null) { //store each line in line and loop so long as line is not null (out of lines in file)
-                List<Entity> tempRow = new ArrayList();
+                ArrayList<Entity> tempRow = new ArrayList();
                 for(int a = 0; a < line.length(); a++) {
                     switch(line.charAt(a)) {
                         case 'w':
@@ -96,20 +93,35 @@ public class Map {
             if(input.equals("a")) {input = "left";} else
             if(input.equals("s")) {input = "down";} else
             if(input.equals("d")) {input = "right";}
-            else {input = "none";
+            else {
+                input = "none";
             }
             
             return input;
         }
         
+        private int numberOfTurns;
+        
         public void doTurn() {
-            player.doMove(getInput());
-            for (Ghost ghost : ghosts) {
-                //ghost.doMove(someLogicToDetermineDirection());
+            player.doMove(getInput(), entities);
+            if(numberOfTurns < 16 && numberOfTurns%5 == 0) { // Release a ghost every 5 turns
+                ghosts.get(numberOfTurns/5).exitFromBox(entities);
             }
+            ArrayList<Pos> ghostPoss = new ArrayList();
+            for(Ghost ghost: ghosts) { // fill arraylist with ghost positions for use in ghost movement ai
+                ghostPoss.add(ghost.pos);
+            }
+            for (Ghost ghost : ghosts) { // handle ghost movement
+                if(ghost.isOutOfBox())
+                ghost.doMove(ghost.determineMove(player.pos, ghostPoss, entities), entities);
+                if(player.pos.x == ghost.pos.x && player.pos.y == ghost.pos.y) {
+                    player.kill(entities);
+                }
+            }
+            numberOfTurns++;
         }
         
-        Map() {
+        public Map() {
             fillEmptyMapFromFile();
             countDots();
             player = new Player(13, 23);
@@ -117,6 +129,7 @@ public class Map {
             ghosts.add(new Ghost(16, 13));
             ghosts.add(new Ghost(11, 15));
             ghosts.add(new Ghost(16, 15));
+            numberOfTurns = 0;
         }
         
     }

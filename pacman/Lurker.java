@@ -1,48 +1,49 @@
 package pacman;
+import java.util.ArrayList;
 
 public class Lurker extends Entity{
 
     Pos pos;
     Pos initialPos;
     
-    private void moveUp() {
-        Pacman.map.entities.get(pos.y-1).get(pos.x).action();
+    private void moveUp(ArrayList<ArrayList<Entity>> map) {
+        map.get(pos.y-1).get(pos.x).action();
         pos.y--;
-        Pacman.map.entities.get(pos.y).set(pos.x, new Entity());
+        map.get(pos.y).set(pos.x, new Entity());
     }
         
-    private void moveDown() {
-        Pacman.map.entities.get(pos.y+1).get(pos.x).action();
+    private void moveDown(ArrayList<ArrayList<Entity>> map) {
+        map.get(pos.y+1).get(pos.x).action();
         pos.y++;
-        Pacman.map.entities.get(pos.y).set(pos.x, new Entity());
+        map.get(pos.y).set(pos.x, new Entity());
     }
         
-    private void moveLeft() {
-        Pacman.map.entities.get(pos.y).get(pos.x-1).action();
+    private void moveLeft(ArrayList<ArrayList<Entity>> map) {
+        map.get(pos.y).get(pos.x-1).action();
         pos.x--;
-        Pacman.map.entities.get(pos.y).set(pos.x, new Entity());
+        map.get(pos.y).set(pos.x, new Entity());
     }
         
-    private void moveRight() {
-        Pacman.map.entities.get(pos.y).get(pos.x+1).action();
+    private void moveRight(ArrayList<ArrayList<Entity>> map) {
+        map.get(pos.y).get(pos.x+1).action();
         pos.x++;
-        Pacman.map.entities.get(pos.y).set(pos.x, new Entity());
+        map.get(pos.y).set(pos.x, new Entity());
     }
     
-    public void doMove(String direction) {
-        if(direction.equals("up") && pos.y > 0 && Pacman.map.entities.get(pos.y-1).get(pos.x).getDisplayChar() != '▯' && Pacman.map.entities.get(pos.y-1).get(pos.x).getDisplayChar() != '-') {
-                moveUp();
-            } else if(direction.equals("down") && pos.y < Pacman.map.entities.size()-1 && Pacman.map.entities.get(pos.y+1).get(pos.x).getDisplayChar() != '▯' && Pacman.map.entities.get(pos.y+1).get(pos.x).getDisplayChar() != '-') {
-                moveDown();
-            } else if(direction.equals("left") && pos.x > 0 && Pacman.map.entities.get(pos.y).get(pos.x-1).getDisplayChar() != '▯' && Pacman.map.entities.get(pos.y).get(pos.x-1).getDisplayChar() != '-') {
-                moveLeft();
-            } else if(direction.equals("right") && pos.x < Pacman.map.entities.get(pos.y).size()-1 && Pacman.map.entities.get(pos.y).get(pos.x+1).getDisplayChar() != '▯' && pos.x < Pacman.map.entities.get(pos.y).size()-1 && Pacman.map.entities.get(pos.y).get(pos.x+1).getDisplayChar() != '-') {
-                moveRight();
+    public void doMove(String direction, ArrayList<ArrayList<Entity>> map) {
+        if(direction.equals("up") && pos.y > 0 && map.get(pos.y-1).get(pos.x).getDisplayChar() != '▯' && map.get(pos.y-1).get(pos.x).getDisplayChar() != '-') {
+                moveUp(map);
+            } else if(direction.equals("down") && pos.y < map.size()-1 && map.get(pos.y+1).get(pos.x).getDisplayChar() != '▯' && map.get(pos.y+1).get(pos.x).getDisplayChar() != '-') {
+                moveDown(map);
+            } else if(direction.equals("left") && pos.x > 0 && map.get(pos.y).get(pos.x-1).getDisplayChar() != '▯' && map.get(pos.y).get(pos.x-1).getDisplayChar() != '-') {
+                moveLeft(map);
+            } else if(direction.equals("right") && pos.x < map.get(pos.y).size()-1 && map.get(pos.y).get(pos.x+1).getDisplayChar() != '▯' && pos.x < map.get(pos.y).size()-1 && map.get(pos.y).get(pos.x+1).getDisplayChar() != '-') {
+                moveRight(map);
             }
     }
     
-    public void kill() {
-        Pacman.map.entities.get(pos.y).set(pos.x, new Entity());
+    public void kill(ArrayList<ArrayList<Entity>> map) {
+        map.get(pos.y).set(pos.x, new Entity());
         pos.x = initialPos.x;
         pos.y = initialPos.y;
     }
