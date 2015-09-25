@@ -3,7 +3,8 @@ package pacman;
 public class Dot extends Item {
     
     @Override
-    public void action() {
+    public String action() {
+        return "subtractDot";
     }
     
     Dot() {

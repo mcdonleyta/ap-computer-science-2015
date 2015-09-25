@@ -24,7 +24,6 @@ public class Map {
         }
         
         public boolean didWin() {
-            countDots();
             return numberOfDots <= 0;
         }
     
@@ -44,10 +43,15 @@ public class Map {
                 }
                 toDisplay.add(tempRow);
             }
-            for (Ghost ghost : ghosts) {
+            for(Ghost ghost : ghosts) {
                 toDisplay.get(ghost.pos.y).set(ghost.pos.x, ghost.getDisplayChar());
             }
+            updateSuper();
+            if(isSuper) {
+                toDisplay.get(player.pos.y).set(player.pos.x, 'C');
+            } else {
             toDisplay.get(player.pos.y).set(player.pos.x, player.getDisplayChar());
+            }
             
             for(int a = 0; a < toDisplay.size(); a++) {
                 for(int b = 0; b < toDisplay.get(a).size();b++) {
@@ -103,22 +107,57 @@ public class Map {
             return input;
         }
         
+        private boolean isSuper;
+        private int turnNumberAtSuperStart;
+        
+        private void updateSuper() { //called by display()
+            if(isSuper && numberOfTurns > turnNumberAtSuperStart+15) {
+                isSuper = false;
+            }
+        }
+        
+        private void handleAction(String action) {
+            if(action.equals("subtractDot")) {
+                numberOfDots--;
+            } else if(action.equals("super")) {
+                numberOfDots--;
+                isSuper = true;
+                turnNumberAtSuperStart = numberOfTurns;
+            }
+            
+        }
+        
         private int numberOfTurns;
         
         public void doTurn() {
-            player.doMove(getInput(), entities);
+            handleAction(player.doMove(getInput(), entities));
             if(numberOfTurns < 16 && numberOfTurns%5 == 0) { // Release a ghost every 5 turns
                 ghosts.get(numberOfTurns/5).exitFromBox(entities);
             }
+            
             ArrayList<Pos> ghostPoss = new ArrayList();
             for(Ghost ghost: ghosts) { // fill arraylist with ghost positions for use in ghost movement ai
                 ghostPoss.add(ghost.pos);
             }
+            for(Ghost ghost: ghosts) { //if player move to ghost
+            if(player.pos.x == ghost.pos.x && player.pos.y == ghost.pos.y) {
+                    if(isSuper) {
+                        ghost.kill(entities);
+                    } else {
+                        player.kill(entities);
+                    }
+                }
+            }
+            
             for (Ghost ghost : ghosts) { // handle ghost movement
                 if(ghost.isOutOfBox())
-                ghost.doMove(ghost.determineMove(player.pos, ghostPoss, entities), entities);
-                if(player.pos.x == ghost.pos.x && player.pos.y == ghost.pos.y) {
-                    player.kill(entities);
+                ghost.doMove(ghost.determineMove(player.pos, ghostPoss, isSuper, entities), entities);
+                if(player.pos.x == ghost.pos.x && player.pos.y == ghost.pos.y) { //if ghost move to player
+                    if(isSuper) {
+                        ghost.kill(entities);
+                    } else {
+                        player.kill(entities);
+                    }
                 }
             }
             numberOfTurns++;
@@ -133,6 +172,7 @@ public class Map {
             ghosts.add(new Ghost(11, 15));
             ghosts.add(new Ghost(16, 15));
             numberOfTurns = 0;
+            isSuper = false;
         }
         
     }

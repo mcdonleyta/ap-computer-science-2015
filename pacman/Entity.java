@@ -2,7 +2,8 @@ package pacman;
 
 public class Entity {
         
-    public void action() {
+    public String action() {
+        return "none";
     }
         
     private char displayChar = ' ';
