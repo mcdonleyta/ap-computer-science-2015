@@ -1,4 +1,5 @@
 import pacman.*;
+import java.io.*;
 
 public class pacman {
 	
@@ -9,7 +10,12 @@ public class pacman {
 		int playerX, playerY;
 		char characterDisplay = newPlayer.getDisplayEntity();
 		newPlayer.setActive(true);
-		myDisplay.setList();
+		try {
+			myDisplay.setList();
+		}
+		catch(IOException e) {
+
+		}
 		for(int i = 0; i < i + 1; i++) {
 			newPlayer.Input();
 			playerX = newPlayer.getX();
