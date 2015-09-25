@@ -1,12 +1,9 @@
 package PacMan;
 public class moveEntity extends entity
 {
-	int x;
-	int y; //cords 
-	
 
-	moveEntity()
+	public moveEntity()
 	{
-		setDisplayEntity('C');
+		setDisplayEntity('C'); //will add more things that can move later
 	}
 }
