@@ -15,7 +15,7 @@ public class textFileMap
  public int c; //I cant spell coulom (??) EDIT: column but too lazy to change now
  public int x = 15;
  public int y = 14; 
- public ArrayList <Character> charList =  new Arraylist <Character> ();
+ public List <Character> charList =  new ArrayList <Character> ();
  
 	public void startEntities()
 	{
@@ -23,12 +23,14 @@ public class textFileMap
 	try{
 	BufferedReader reader = new BufferedReader(new FileReader(new File(getClass().getResource("board.txt").getPath())));
 	String line;
+	char[] temp;
 	while((line = reader.readLine()) != null)
 	{
-		for(char c : line.toCharArray())
-		{
-			charList.add(c);
-		}
+		temp = line.toCharArray();
+			for ( char character : temp) {
+				charList.add(character);
+		
+				}
 	}
 	}
 	catch(Exception e){
@@ -36,15 +38,9 @@ public class textFileMap
 	}
 		
 	}
-	public void putInGameBoard()
-	{
-		for ( int i = 0; i >= charList.size(); i++) {
-				{
-					char temp = charList.get(i);
-					if (temp == '.'
-				}
-		
-	}
+
+
+
 	public textFileMap()
 	{
 		startEntities();
