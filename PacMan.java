@@ -9,16 +9,15 @@ public class PacMan
 {
 public static void main (String[] args)
 {
- map board  = new map();
- for (;;) //infinite loop for debug (like all other terrible code in this program)
- {
-	textFileMap test = new textFileMap();
- // board.populate();
+ 
+	textFileMap board = new textFileMap();
+	board.draw();
+// board.populate();
  //board.draw();
  //board.move();
  //board.clearBoard();
  
-}
+
 }
 
 
