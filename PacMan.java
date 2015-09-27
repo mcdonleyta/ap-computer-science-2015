@@ -11,11 +11,11 @@ public static void main (String[] args)
 {
  
 	textFileMap board = new textFileMap();
+	for(;;)
+	{
 	board.draw();
-// board.populate();
- //board.draw();
- //board.move();
- //board.clearBoard();
+	board.move();
+}
  
 
 }
