@@ -1,6 +1,5 @@
 package pacman;
 
-import pacman.*;
 import java.util.*;
 
 public class Display
@@ -52,7 +51,7 @@ public class Display
 		}
 		for(MoveableEntity me : moveableEntityList)
 		{
-			buffer.get(me.getXpos()).set(me.getYpos(),me.getMoveableEntityChar());
+			buffer.get(me.getXpos()).set(me.getYpos(),me.getEntityChar());
 		}
 		for(int row=0; row<screenHeight; row++)
 		{

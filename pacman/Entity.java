@@ -1,12 +1,11 @@
 package pacman;
 
-import pacman.*;
 import java.util.*;
 
 public class Entity
 {
 
-	protected char entityChar;
+	private char entityChar;
 	private int passable; //treat as bool
 	
 	public Entity()

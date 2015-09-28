@@ -1,6 +1,5 @@
 package pacman;
 
-import pacman.*;
 import java.util.*;
 
 public class MoveableEntity extends Entity
@@ -9,10 +8,10 @@ public class MoveableEntity extends Entity
 	private int xpos;  //col number
 	
 	public MoveableEntity()
-	{
+	{	
 		ypos = 10;
 		xpos = 20;
-		entityChar = 'C';
+		setEntityChar('C');
 	}
 	
 	public int getYpos()
@@ -23,11 +22,11 @@ public class MoveableEntity extends Entity
 	{
 		return xpos;
 	}
-	public int setYpos(int r)
+	public void setYpos(int r)
 	{
 		ypos=r;
 	}
-	public int setXpos(int c)
+	public void setXpos(int c)
 	{
 		xpos=c;
 	}
