@@ -6,7 +6,7 @@ public class pacman {
 	public static void main(String[] args) {
 		Display myDisplay = new Display();
 		Player newPlayer = new Player();
-		String error;
+		String error, flag;
 		int playerX, playerY;
 		char characterDisplay = newPlayer.getDisplayEntity();
 		newPlayer.setActive(true);
@@ -24,7 +24,8 @@ public class pacman {
 			newPlayer.processErr(error);
 			playerX = newPlayer.getX();
 			playerY = newPlayer.getY();
-			myDisplay.outList(playerX, playerY, characterDisplay);
+			flag = myDisplay.outList(playerX, playerY, characterDisplay);
+			newPlayer.addScore(flag);
 		}
 	}
 

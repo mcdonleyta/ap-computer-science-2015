@@ -6,8 +6,8 @@ public class Entity {
 
 	public Boolean active = true;
 
-	public void setDisplayEntity(char ascii) {
-		myDisplayEntity = ascii;
+	public void setDisplayEntity(int ascii) {
+		myDisplayEntity = (char) ascii;
 	}
 
 	public char getDisplayEntity() {

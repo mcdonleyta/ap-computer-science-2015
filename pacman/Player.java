@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Player extends Character {
 
-	int oldX, oldY;
+	int oldX, oldY, score = 0;
 	Scanner getIn = new Scanner(System.in);
 
 	public void Input() {
@@ -27,6 +27,10 @@ public class Player extends Character {
 			case "d":
 				changeX = 1;
 				break;
+
+			case "quit":
+				System.exit(0);
+				break;
 		}
 		oldX = cordX;
 		oldY = cordY;
@@ -41,8 +45,15 @@ public class Player extends Character {
 		}
 	}
 
+	public void addScore(String flag) {
+		if(flag == "plus_1") {
+			score++;
+		}
+		System.out.printf("Score: %d%n", score);
+	}
+
 	public Player() {
-		setDisplayEntity('!');
+		setDisplayEntity('C');
 		setActive(true);
 		cordX = 1;
 		cordY = 1;
