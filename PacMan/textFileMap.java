@@ -10,6 +10,7 @@ public class textFileMap extends moveEntity
 {
  private List <List <entity>> myBoard = new ArrayList<List<entity>>(); //gameboard itself
  public moveEntity pacman = new moveEntity();
+ public List <Integer> counter = new ArrayList <Integer> ();
  
 	public void startEntities()
 	{
@@ -58,7 +59,7 @@ public class textFileMap extends moveEntity
 		}
 	}
 
-	public void move ()
+	public int move ()
 	{
 		Scanner input = new Scanner(System.in);
 		int userinput = input.nextInt();
@@ -75,36 +76,49 @@ public class textFileMap extends moveEntity
 		if ( collision != '0') 
 				{
 					myBoard.get(indexX-1).set(indexY,pacman);
-					myBoard.get(indexX).set(indexY,new entity());
+					myBoard.get(indexX).set(indexY,new eatenSpace());
+					counter.add(0);
+					
 				}
-			else
-				System.out.print("Error");
+				return 8;
+				
 		}
 		else if (userinput == 6) {
 			char collide = myBoard.get(indexX).get(indexY +1).getDisplayEntity();
 				if (collide != '0') {
 					myBoard.get(indexX).set(indexY+1 ,pacman);
-					myBoard.get(indexX).set(indexY, new entity());
+					myBoard.get(indexX).set(indexY, new eatenSpace());
+					counter.add(0);
 				}
+				return 6;
 			}
 		else if (userinput == 2) {
 				char collide = myBoard.get(indexX +1).get(indexY).getDisplayEntity();
 				if(collide != '0') {
 					myBoard.get(indexX +1).set(indexY,pacman);
-					myBoard.get(indexX).set(indexY, new entity());
+					myBoard.get(indexX).set(indexY, new eatenSpace());
+					counter.add(0);
 				}
+				return 2;
 			}
 		else if (userinput == 4) {
 			char collide = myBoard.get(indexX).get(indexY-1).getDisplayEntity();
 			if (collide != '0') {
 				myBoard.get(indexX).set(indexY - 1,pacman);
-				myBoard.get(indexX).set(indexY, new entity());
-			}
-		}
-			
+				myBoard.get(indexX).set(indexY, new eatenSpace());
+				counter.add(0);
 				
+			}
+			return 4;
+		}
+		
+			
+		return 0;	
 	}
-
+public int getCounter () {
+	int size = counter.size();
+	return size;
+}
 
 	public textFileMap()
 	{

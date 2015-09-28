@@ -1,4 +1,4 @@
-package PacMan;
+package PacMan; //NOW OBSOLETE NOT USED
 
 import java.util.*;
 import java.util.Scanner;
