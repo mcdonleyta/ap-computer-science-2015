@@ -1,4 +1,4 @@
-//had working code that dissapeared
+//had working code that disappeared
 import java.util.*;
 
 class Ciphering {
