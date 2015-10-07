@@ -5,6 +5,7 @@ public class PacMan{
      public static void main(String []args)
      {
 		Display myDisplay = new Display();
+<<<<<<< HEAD
 		for(;;)
 		{
 		myDisplay.DisplayPrint();
@@ -13,5 +14,8 @@ public class PacMan{
 		myDisplay.Move(i);
 		}
 
+=======
+		myDisplay.DisplayPrint();
+>>>>>>> 1cb32f618aaf2da5dd4c14642e17849f9121bb50
      }
 }
