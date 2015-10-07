@@ -61,4 +61,12 @@ public class Display
 			System.out.println();
 		}
 	}
+	public void addMoveableEntity(MoveableEntity me)
+	{
+		moveableEntityList.add(me);
+	}
+	public void addMoveableEntity(Player me)
+	{
+		moveableEntityList.add(me);
+	}
 }
