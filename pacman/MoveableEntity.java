@@ -11,7 +11,7 @@ public class MoveableEntity extends Entity
 	{	
 		ypos = 10;
 		xpos = 20;
-		setEntityChar('C');
+		setEntityChar('U');
 	}
 	
 	public int getYpos()

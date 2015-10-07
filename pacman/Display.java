@@ -11,8 +11,6 @@ public class Display
 	private int screenWidth = 28;
 	public Display()
 	{
-		MoveableEntity pman = new MoveableEntity();
-		moveableEntityList.add(pman);
 		for(int row=0; row<screenHeight; row++)    //init buffer
 		{
 			List<Character> bufferRow = new ArrayList<Character>();
