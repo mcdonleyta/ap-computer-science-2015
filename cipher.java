@@ -29,7 +29,7 @@ class cipher {
 	public static void main(String[] args) {
 		Ciphering cypher = new Ciphering();
 		Scanner getString  = new Scanner(System.in);
-		System.out.println("Enter some text, no caps");
+		System.out.println("Enter some text");
 		String input = getString.nextLine();
 		String output = cypher.convert(input);
 		System.out.println(output);
