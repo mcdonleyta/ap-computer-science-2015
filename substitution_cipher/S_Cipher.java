@@ -7,7 +7,8 @@ public class S_Cipher
 {
 	public static void main(String[] args)
 	{
-		List<String> words = new ArrayList<String>();
+		List<Character> words = new ArrayList<Character>();
+		Cipher class_cipher = new Cipher();
 		System.out.println("Please enter a word, phrase or string below: ");
 		Scanner scan = new Scanner(System.in);
 		String input = scan.nextLine();
@@ -20,13 +21,12 @@ public class S_Cipher
 			System.out.println(input.charAt(i));
 		}*/
 		
-		for(int j = 0; j < length; j++);
+		for(int it = 0; it < length; it++)
 		{
-			words.add(input.charAt(j));
+			words.add(input.charAt(it)); //can't get this to work, can't find variable for some reason
 		}
 		
-		int Asize = words.size();
-		System.out.println(Asize);
+		int Asize = words.size()
 		
 	}
 }
