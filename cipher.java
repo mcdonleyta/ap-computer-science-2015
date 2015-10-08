@@ -3,29 +3,17 @@ import java.util.*;
 
 class Ciphering {
 
-	private String alphabet = "abcdefghijklmnopqrstuvwxyz";
-	private String altChars = "5@*bM)!J':L#;$%QBVC&9Y-_+}";
-
-	public int getIntPlace(char letterIn) {
-		char[] charAlphabet = alphabet.toCharArray();
-		for(int i = 0; i < charAlphabet.length; i++) {
-			if(letterIn == charAlphabet[i]) {
-				return i;
-			}
-		}
-		return 0;
-	}
+	private String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ      abcdefghijklmnopqrstuvwxyz";
+	private String altChars = "u?`~tnqrlos(ghezjkwad|ybcp      5@*IM)!J':L#;$%QBVC&9Y-_+}";
 
 	public String convert(String stringIn) {
 		String stringOut = "";
 		char[] lettersIn = stringIn.toCharArray();
 		int place = 0;
 		for(int j = 0; j < lettersIn.length; j++) {
-			if(lettersIn[j] != ' ') {
-				place = getIntPlace(lettersIn[j]);
-			}	
-			if(lettersIn[j] == alphabet.toCharArray()[place]) {
-				stringOut += Character.toString(altChars.toCharArray()[place]);
+			place = ((int)lettersIn[j]) - 65;
+			if(lettersIn[j] != ' ' && lettersIn[j] == alphabet.charAt(place)) {
+				stringOut += Character.toString(altChars.charAt(place));
 			}
 			else if(lettersIn[j] == ' ') {
 				stringOut += " ";
