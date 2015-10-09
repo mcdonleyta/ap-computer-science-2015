@@ -33,18 +33,30 @@ public class S_Cipher
 		Wsize = words.size();
 		//System.out.println(Wsize + " " + Asize);
 		
-		while(Csize <= Wsize)
+		while(Csize != Wsize)
 		{
 			for(int k = 0; k < Wsize; k++)
 			{
 				for(l = 0; l < Asize; l++)
 				{
-					/*if()
+					if(words.get(k) == ' ')
 					{
 						System.out.print(words.get(k));
 					}else
-					if()
-					{*/
+					if(words.get(k) == ',')
+					{
+						System.out.print(words.get(k));
+					}else
+					if(words.get(k) == '?')
+					{
+						System.out.print(words.get(k));
+					}else
+					if(words.get(k) == '!')
+					{
+						System.out.print(words.get(k));
+					}else
+					//if()
+					{
 						if(words.get(k) == alpha.get(l))
 						{
 							if(alpha.get(l) == 'X')
@@ -63,11 +75,12 @@ public class S_Cipher
 								System.out.print(alpha.get(l + 3));
 							}
 						}
-					//}
+					}
 				}
 				Csize++;
 				//l = 0;
 			}
-		}	
+		}
+		System.out.println();	
 	}
 }
