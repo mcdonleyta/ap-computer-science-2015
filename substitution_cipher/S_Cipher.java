@@ -21,7 +21,7 @@ public class S_Cipher
 		
 		for(int j = 0; j < length; j++)
 		{
-			System.out.println(input.charAt(j));
+			//System.out.println(input.charAt(j));
 			words.add(input.charAt(j));
 		}
 		for(char alphabet = 'A'; alphabet <= 'Z'; alphabet++)
@@ -31,12 +31,13 @@ public class S_Cipher
 		
 		Asize = alpha.size();
 		Wsize = words.size();
-		System.out.println(Wsize + " " + Asize);
+		//System.out.println(Wsize + " " + Asize);
+		
 		while(Csize <= Wsize)
 		{
-			for(int k = 0; k <= Wsize; k++)
+			for(int k = 0; k < Wsize; k++)
 			{
-				for(l = 0; l <= Asize; l++)
+				for(l = 0; l < Asize; l++)
 				{
 					/*if()
 					{
@@ -65,7 +66,7 @@ public class S_Cipher
 					//}
 				}
 				Csize++;
-				l = 0;
+				//l = 0;
 			}
 		}	
 	}
