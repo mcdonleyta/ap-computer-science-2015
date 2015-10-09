@@ -11,7 +11,7 @@ class Ciphering {
 		char[] lettersIn = stringIn.toCharArray();
 		int place;
 		for(int j = 0; j < lettersIn.length; j++) {
-			if((int)lettersIn[j] >= 65 && (int)lettersIn[j] <= 122 || (int)lettersIn[j] == ' ') {
+			if((int)lettersIn[j] >= 65 && (int)lettersIn[j] <= 122 || lettersIn[j] == ' ') {
 				place = (int)lettersIn[j] - 65;
 				if(lettersIn[j] != ' ' && lettersIn[j] == alphabet.charAt(place))
 					stringOut += Character.toString(altChars.charAt(place));
