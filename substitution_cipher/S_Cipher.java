@@ -42,20 +42,58 @@ public class S_Cipher
 					if(words.get(k) == ' ')
 					{
 						System.out.print(words.get(k));
+						break;
 					}else
 					if(words.get(k) == ',')
 					{
 						System.out.print(words.get(k));
+						break;
 					}else
 					if(words.get(k) == '?')
 					{
 						System.out.print(words.get(k));
+						break;
 					}else
 					if(words.get(k) == '!')
 					{
 						System.out.print(words.get(k));
+						break;
 					}else
-					//if()
+					if(words.get(k) == '.')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
+					if(words.get(k) == '/')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
+					if(words.get(k) == '"')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
+					if(words.get(k) == ':')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
+					if(words.get(k) == ';')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
+					if(words.get(k) == '-')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
+					if(words.get(k) == '_')
+					{
+						System.out.print(words.get(k));
+						break;
+					}else
 					{
 						if(words.get(k) == alpha.get(l))
 						{
@@ -78,7 +116,6 @@ public class S_Cipher
 					}
 				}
 				Csize++;
-				//l = 0;
 			}
 		}
 		System.out.println();	
