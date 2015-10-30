@@ -11,4 +11,4 @@ Karel J Robot Lab
 	java -classpath .:KarelJRobot.jar kareltherobot.Example01
 	
 	To launch a diffrent file, replace Example01 with $FILENAME
- 3 & 4) See  StairsDirectionsImplementation.java
+ 3,4,5,6) See  files

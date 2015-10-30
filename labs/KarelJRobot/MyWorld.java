@@ -1,7 +1,8 @@
 package kareltherobot;
 
-public class PlsWrk implements Directions
+public class MyWorld implements Directions
 {
+
     public static void main (String[] args)
     {
         World.reset();
@@ -11,23 +12,22 @@ public class PlsWrk implements Directions
         Robot karel = new Robot(1, 1, East, 3); 
 	karel.turnLeft();
 	karel.move();
-	karel.turnLeft();  // TODO: implement right turn
-	karel.turnLeft();
-	karel.turnLeft();
+	turnRight(karel);
 	karel.move();
 	karel.turnLeft();
 	karel.move();
-	karel.turnLeft(); 
-	karel.turnLeft();
-	karel.turnLeft();
+	turnRight(karel);
 	karel.move();
 	karel.turnLeft();
 	karel.move();
-	karel.turnLeft(); 
-	karel.turnLeft();
-	karel.turnLeft();
+	turnRight(karel);
 	karel.move();
 	karel.turnLeft();
 	karel.pickBeeper();
     }
+    public static void turnRight(Robot karel) {
+		karel.turnLeft();
+		karel.turnLeft();
+		karel.turnLeft();
+}
 }
