@@ -62,7 +62,7 @@ public class textFileMap extends moveEntity
 	public int move ()
 	{
 		Scanner input = new Scanner(System.in);
-		int userinput = input.nextInt();
+		String userinput = input.nextLine();
 		int indexX = 0;
 		int indexY = 0;
 		for(int i = 1; i<= myBoard.size(); i++){
@@ -71,7 +71,7 @@ public class textFileMap extends moveEntity
 				if (indexY != -1)
 					break;
 		}
-		if (userinput == 8) {
+		if (userinput == "w") {
 			char collision = myBoard.get(indexX-1).get(indexY).getDisplayEntity();
 		if ( collision != '0') 
 				{
@@ -83,7 +83,7 @@ public class textFileMap extends moveEntity
 				return 8;
 				
 		}
-		else if (userinput == 6) {
+		else if (userinput == "d") {
 			char collide = myBoard.get(indexX).get(indexY +1).getDisplayEntity();
 				if (collide != '0') {
 					myBoard.get(indexX).set(indexY+1 ,pacman);
@@ -92,7 +92,7 @@ public class textFileMap extends moveEntity
 				}
 				return 6;
 			}
-		else if (userinput == 2) {
+		else if (userinput == "s") {
 				char collide = myBoard.get(indexX +1).get(indexY).getDisplayEntity();
 				if(collide != '0') {
 					myBoard.get(indexX +1).set(indexY,pacman);
@@ -101,7 +101,7 @@ public class textFileMap extends moveEntity
 				}
 				return 2;
 			}
-		else if (userinput == 4) {
+		else if (userinput == "a") {
 			char collide = myBoard.get(indexX).get(indexY-1).getDisplayEntity();
 			if (collide != '0') {
 				myBoard.get(indexX).set(indexY - 1,pacman);
@@ -118,6 +118,15 @@ public class textFileMap extends moveEntity
 public int getCounter () {
 	int size = counter.size();
 	return size;
+}
+public int[] findPacman {
+	int[] ret = new int[1];
+	for( int i = 0; i< myBoard.size();i++) {
+		char indentifier = e.getDisplayEntity();
+		
+			
+	}
+	
 }
 
 	public textFileMap()
