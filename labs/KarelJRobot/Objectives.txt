@@ -1,0 +1,13 @@
+Sundeep Vaswani
+10/31/15
+AP Computer Science
+KarelJRobot Lab
+
+Add file from Git:
+
+git checkout SunnyV
+git checkout master -- labs/KarelJRobot
+git add labs/KarelJRobot
+git commit -m "message here"
+git push origin SunnyV
+
