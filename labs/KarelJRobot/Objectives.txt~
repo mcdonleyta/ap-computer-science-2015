@@ -21,13 +21,8 @@ java -cp .:KarelJRobot.jar kareltherobot.Example01
 
 Uses the same command as objective to compile excepts uses different file name in place of Example01, which in this case is karelclimbsstairs
 
+Code is hardcoded to climb stairs with implementation of turn right command to help
+
 4. implement a robot that climbs the stairs
-
-Code is hardcoded to climb stairs with implementation of turn right command to help, used as a function that is called when needed. 
-
-5. look at programs to travel the maze and staits for implentation
-
-6. 
-
 
 
