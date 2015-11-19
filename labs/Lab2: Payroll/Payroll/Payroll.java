@@ -2,7 +2,8 @@ package Payroll;
 import java.util.*;
 public class Payroll {
 	public static double stockPrice;
-	private List<Employee> payroll = new ArrayList<Employee>();
+	public List<Employee> payroll = new ArrayList<Employee>();
+	public List <Employee> liars = new ArrayList<Employee>();
 	public static int emps;
 	
 	public void addEmployee() {
@@ -17,7 +18,7 @@ public class Payroll {
 			System.out.println("Please input your information as follows:");
 			System.out.print("Name: ");
 			newname = sc.next();
-			System.out.print("Paygrade level (0-7): ");
+			System.out.print("Paygrade level (1-7): ");
 			payGradeLvl = sc.nextInt();
 			System.out.println();
 			System.out.print("Base Salary: ");
@@ -29,43 +30,62 @@ public class Payroll {
 				System.out.println("How many shares?: ");
 				newShares = sc.nextInt();
 			}
-			Employee addThis = new Employee(newname,payGradeLvl,bs,stockOptions,newShares);
-			payroll.add(addThis);
+			if(payGradeLvl == 7) {
+			System.out.println("This user appears to be a CEO!");
+			for(int i = 0; i< payroll.size(); i++) {
+				if(payroll.get(i).getPayGrd() == 7) {
+					System.out.print("Previous CEO found. This incident will be reported.");
+					liars.add(new Employee(newname));
+					break;
+			}
+				
+			}
+			payroll.add(new CEO(newname,bs,stockOptions,newShares));
+		}
+			payroll.add(new Employee(newname,payGradeLvl,bs,stockOptions,newShares));
 			emps++;
-		
+			
 		}
 	public void subEmployee() {
 		String searchName;
 		System.out.println("Employee Name: ");
 		Scanner sc = new Scanner(System.in);
 		searchName= sc.next();
-		int i = 0;
-		for(Employee e: payroll) {
-			if(e.getName().equals(searchName)) {
+		for(int i =0; i<payroll.size(); i++) {
+			if(payroll.get(i).getName().equals(searchName)) {
 				payroll.remove(i);
 				break;
 			}
-			i++;
 		}
 		emps--;
 		System.out.println(searchName + " was removed from the database");
 	}
-	public void dispEmployee() { //bugged, cant find employee
+	public void dispEmployee() { 
+		
 		String searchName;
 		System.out.println("Employee Name: ");
 		Scanner sc = new Scanner(System.in);
-		searchName= sc.next();
-		for(Employee e:payroll) {
-			if (e.getName().equals(searchName)) { 
-			System.out.println("Name: " +  e.getName());
-			System.out.println("Salary Per Month: "+ e.getSalary());
-			System.out.println("Stock options: " + e.getShares());
-		}
-		else 
-			System.out.println("Not Found!"); //always returning this dont know why
-		
+		searchName= sc.nextLine();
+		for(int i = 0; i <payroll.size(); i++) {
+			if (payroll.get(i).getName().equals(searchName)) { 
+			payroll.get(i).calcWorth();
+			System.out.println("Name: " +  payroll.get(i).getName());
+			System.out.println("Salary Per Month: "+ payroll.get(i).getSalary());
+			System.out.println("Stock options: " + payroll.get(i).getShares());
+			System.out.println("Money this employee makes per unit time: " + payroll.get(i).getWorth());
+			System.out.println();
+		}	
 	}
 }
+public double getBudget() {
+	double empBudget = 0.0;
+	for(int i = 0; i<payroll.size();i++) {
+		payroll.get(i).calcWorth();
+		empBudget += payroll.get(i).getWorth();
+	}
+	return empBudget;	
+}
+
 	public Payroll () { //default constructor
 	}
 

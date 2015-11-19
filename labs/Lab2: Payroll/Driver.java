@@ -1,9 +1,6 @@
 import Payroll.*;
 import java.util.*;
 public class Driver{
-	
-	
-	//todo addPerson, lookUpEmployee,etc
 	public static void main(String[] args) {
 		Payroll currentPayroll = new Payroll();
 		boolean cont = true;
@@ -15,7 +12,9 @@ public class Driver{
 		System.out.println("1) Add Emplyee");
 		System.out.println("2) View Employee");
 		System.out.println("3) Subtact Employee");
-		System.out.println("4) Terminate Program");
+		System.out.println("4) Display employee budget");
+		System.out.println("5) Other search/sort functonality");
+		System.out.println("6) Terminate Program");
 		System.out.print("Please select an action by its number: ");
 		choice = sc.nextInt(); 
 		if (choice == 1) { //add safety
@@ -27,11 +26,20 @@ public class Driver{
 			System.out.println();
 		}
 		else if (choice == 2) {
-			currentPayroll.dispEmployee(); //currently bugged, cannot find any employees in the list (maybe error w/ add employee?)
+			currentPayroll.dispEmployee(); 
 			System.out.println();
 		}
-		
-		System.out.println(currentPayroll.emps);
+		else if (choice == 4) {
+			System.out.println(" Total employee cost is " + currentPayroll.getBudget());
+		}
+		else if (choice == 5) {
+			//TODO implement other search and sort functionality
+		}
+		else if (choice == 6) {
+			break;
+		}
+		else 
+			System.out.println("Please enter a valid input command from 1-4");	
 	}
 	
 	}
