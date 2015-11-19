@@ -3,7 +3,7 @@ import PayRoll.*;
 import java.util.*;
 
 public class PayRollMain{
-public ArrayList<Employee> EmployeeList = new ArrayList<Employee>();
+private ArrayList<Employee> EmployeeList = new ArrayList<Employee>();
 
 public void addEmployee(Employee In)
 {
@@ -14,7 +14,7 @@ public double getSalary(String Name)
 	double Salary = 0;
 	for(Employee e: EmployeeList)
 	{
-		if(Name == e.getEmployeeName())
+		if(Name.equals(e.getEmployeeName()) == true)
 		{
 			Salary = e.getEmployeeSalary();
 		}

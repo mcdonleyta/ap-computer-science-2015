@@ -12,7 +12,7 @@ public class OverView{
 		String NameInputSecondString;
 		int PayGradeInt;
 		double SalaryDouble;
-		int SharesInt;
+		double SharesDouble;
 		boolean ShareChoiceBoolean = false;
 		String ShareChoiceString;
 		PayRollMain myPayRoll = new PayRollMain();
@@ -45,7 +45,7 @@ public class OverView{
 			SalaryDouble = SalaryInput.nextDouble();
 			System.out.println("How many Shares does this employee own?");
 			Scanner SharesInput = new Scanner(System.in);
-			SharesInt = SharesInput.nextInt();
+			SharesDouble = SharesInput.nextDouble();
 			System.out.println("Does this person own stocks? (Type yes if so)");
 			Scanner ShareChoiceInput = new Scanner (System.in);
 			ShareChoiceString = ShareChoiceInput.nextLine();
@@ -53,7 +53,7 @@ public class OverView{
 			{
 				ShareChoiceBoolean = true;
 			}
-			Employee newEmployee = new Employee(PayGradeInt, SalaryDouble, SharesInt, NameInputString, ShareChoiceBoolean);
+			Employee newEmployee = new Employee(PayGradeInt, SalaryDouble, SharesDouble, NameInputString, ShareChoiceBoolean);
 			myPayRoll.addEmployee(newEmployee);
 		}
 		else if(FirstChoiceInt == 2)
