@@ -11,4 +11,12 @@ public class CEO extends Employee{
         }
     }
 
+    public CEO(String newName, int pgrade, float bSalary, float sPercent, Boolean sOptions) {
+        name = newName;
+        setPaygrade(pgrade);
+        setBaseSalary(bSalary);
+        setStockOptions(sOptions);
+        setStockPercent(sPercent);
+    }
+
 }
