@@ -14,11 +14,11 @@ public Employee(int PayG, double Sal, int Stock, String Called, boolean Shares)
 	PayedInShares = Shares;
 	setName(Called);
 }
-public double getSalary()
+public double getEmployeeSalary()
 {
 	return Salary;
 }
-public String getName()
+public String getEmployeeName()
 {
 	return getName();
 }

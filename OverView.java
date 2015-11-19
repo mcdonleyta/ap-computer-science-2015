@@ -64,10 +64,12 @@ public class OverView{
 			SecondChoiceInt = SecondChoice.nextInt();
 			if(SecondChoiceInt == 1)
 			{
+				double SalaryTemp;
 				System.out.println("What is the Name of the Employee?");
 				Scanner NameInputSecond = new Scanner(System.in);
 				NameInputSecondString = NameInputSecond.nextLine();
-				myPayRoll.getSalary(NameInputSecondString);
+				SalaryTemp = myPayRoll.getSalary(NameInputSecondString);
+				System.out.println("Salary: " + SalaryTemp);
 			}
 		}
 		else
