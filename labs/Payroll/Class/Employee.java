@@ -9,7 +9,7 @@ public class Employee extends People
 
 	public void set_entry(int entry_level)
 	{
-		if(entry_level > 6)
+		if(entry_level > 8)
 		{
 			System.out.println("Invalid entry level, please enter another one.");
 			entry_level = input.nextInt();
@@ -52,6 +52,10 @@ public class Employee extends People
 				sal = 903.00;
 				salary = sal;
 				break;
+			case 7:
+				sal = 1000.00;
+				salary = sal;
+				break;
 			default:
 				sal = 0;
 				salary = sal;
@@ -70,9 +74,10 @@ public class Employee extends People
 		set_salary(1);
 	}
 
-	public Employee(int entry_level)
+	public Employee(int entry_level, String name)
 	{
 		set_entry(entry_level);
 		set_salary(entry_level);
+		super(name);
 	}
 }
