@@ -1,10 +1,10 @@
-package worker;
+package payroll;
 
 public class Employee extends Person {
 
     protected int paygrade;
     protected float baseSalary;
-    protected float stockPercent;
+    protected int stockShares;
     protected Boolean stockOptions;
 
 
@@ -20,8 +20,8 @@ public class Employee extends Person {
         return stockOptions;
     }
 
-    public float getStockPercent() {
-        return stockPercent;
+    public int getStockShares() {
+        return stockShares;
     }
 
     public void setPaygrade(int newPaygrade) {
@@ -40,16 +40,16 @@ public class Employee extends Person {
         stockOptions = newStockOptions;
     }
 
-    public void setStockPercent(float newStockPercent) {
-        stockPercent = newStockPercent;
+    public void setStockPercent(int newStockPercent) {
+        stockShares = newStockPercent;
     }
 
-    public Employee(String newName, int pgrade, float bSalary, float sPercent, Boolean sOptions) {
+    public Employee(String newName, int pgrade, float bSalary, int sShares, Boolean sOptions) {
         name = newName;
         setPaygrade(pgrade);
         setBaseSalary(bSalary);
         setStockOptions(sOptions);
-        setStockPercent(sPercent);
+        setStockPercent(sShares);
     }
 
     public Employee() {
@@ -57,7 +57,7 @@ public class Employee extends Person {
         paygrade = 0;
         baseSalary = 0;
         stockOptions = false;
-        stockPercent = 0;
+        stockShares = 0;
     }
 
 }
