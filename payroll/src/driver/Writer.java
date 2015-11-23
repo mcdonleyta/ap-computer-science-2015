@@ -2,7 +2,6 @@ package driver;
 
 import payroll.*;
 import java.io.*;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +15,6 @@ public class Writer {
     public void writer(Payroll company) throws IOException{
         writer = new PrintWriter(new FileWriter((company.getName() + ".txt"), false));
         Employee curEmployee;
-        List<Float> paygrade = company.getPayGradeNums();
         writer.println(company.getStockWorth());
         for(int i = 0; i <  7; i++) {
             writer.println(company.getPayGradeNums().get(i));
@@ -33,7 +31,7 @@ public class Writer {
     }
 
     public List<String> getCompanies() throws IOException {
-        read = new FileReader("companies");
+        read = new FileReader("companies.txt");
         reader = new BufferedReader(read);
         List<String> ret = new ArrayList<>(0);
         String line = null;

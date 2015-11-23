@@ -60,8 +60,8 @@ public class Driver {
     public void loadCompany() throws IOException {
         List<String> companies = write.getCompanies();
         int i = 0, choice1;
-        for(String company: companies) {
-            System.out.println("\t" + (i + 1) + ": " + company);
+        for(int f = 0; f < companies.size(); f++) {
+            System.out.println("\t" + (f + 1) + ": " + companies.get(f));
         }
         System.out.print("Which Company Do You Want To Load:\n\t");
         choice1 = intIn.nextInt();
