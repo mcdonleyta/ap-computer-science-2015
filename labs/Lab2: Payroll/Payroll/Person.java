@@ -16,7 +16,7 @@ public class Person {
 		return shares;
 	}
 	public void setShares(int newShares) {
-		newShares = shares;
+		newShares = shares; //This assignment is backwards
 	}
 	public Person(String inputName) {
 		name = inputName;
