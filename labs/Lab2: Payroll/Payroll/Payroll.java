@@ -6,8 +6,8 @@ public class Payroll {
 	public List <Employee> liars = new ArrayList<Employee>();
 	public static int emps;
 	
-	public void addEmployee() {
-			
+	public void addEmployee() { //The input code (scanner) should be refactored out into the driver program.
+			            //so the function becomes: addEmployee(name, paygrade, salary, stock, numShares)
 			Scanner sc = new Scanner(System.in);
 			String select;
 			int newShares = 0;
@@ -34,7 +34,7 @@ public class Payroll {
 			System.out.println("This user appears to be a CEO!");
 			for(int i = 0; i< payroll.size(); i++) {
 				if(payroll.get(i).getPayGrd() == 7) {
-					System.out.print("Previous CEO found. This incident will be reported.");
+					System.out.print("Previous CEO found. This incident will be reported."); //LOL
 					liars.add(new Employee(newname));
 					break;
 			}
@@ -46,7 +46,7 @@ public class Payroll {
 			emps++;
 			
 		}
-	public void subEmployee() {
+	public void subEmployee() { //Refactor the scanner out into the driver and pass in the String searchName
 		String searchName;
 		System.out.println("Employee Name: ");
 		Scanner sc = new Scanner(System.in);
@@ -60,7 +60,7 @@ public class Payroll {
 		emps--;
 		System.out.println(searchName + " was removed from the database");
 	}
-	public void dispEmployee() { 
+	public void dispEmployee() { //Refactor the scanner out into the driver and pass in the String searchName 
 		
 		String searchName;
 		System.out.println("Employee Name: ");
