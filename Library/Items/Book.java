@@ -15,7 +15,7 @@ public class Book extends LibraryItem
 		title = t;
 		pages = p;
 	}
-	public int getValue()
+	public double getValue()
 	{
 		return pages;
 	}
