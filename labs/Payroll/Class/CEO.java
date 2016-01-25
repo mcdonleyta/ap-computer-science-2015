@@ -8,17 +8,16 @@ public class CEO extends Employee
 	{
 		boss_name = name;
 	}
-	public void get_boss()
+	public String get_boss()
 	{
 		return boss_name;
 	}
 
 	public CEO()
 	{
-		set_boss("Boss");
-		super(7, get_boss);
+		super(7, "Boss");
 	}
-	public CEO(int entry, int name)
+	public CEO(int entry, String name)
 	{
 		super(entry, name);
 	}

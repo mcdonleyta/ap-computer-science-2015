@@ -11,29 +11,27 @@ public class Driver
 		Scanner name = new Scanner(System.in);
 		Scanner integer = new Scanner(System.in);
 		Scanner input = new Scanner(System.in);
-		String input_name = name.nextLine();
+		String input_name = name.next();
 		int next_int = integer.nextInt();
 		String next_input;
 		boolean check = true;
-		List ofEmployees = new ArrayList <String>;
-		List money = new ArrayList <Integer>;
+		List <Employee> ofEmployees = new ArrayList <Employee>();
 
 		System.out.println("Would you like to create an employee?");
 		System.out.println("	Yes");
 		System.out.println("	No");
-		
-		next_input = input.nextLine();
+		CEO boss = new CEO(7, "Steve Jobs");
+		ofEmployees.add(boss);
+		next_input = input.next();
 
 		while(next_input.equals("yes") && check == true)
 		{
-			CEO boss = new CEO(7, "Steve Jobs");
 			System.out.println("What is the name of the employee?");
-			input_name = input.nextLine();
-			//People object = new People(input_name);
+			input_name = input.next();
 			System.out.println("What is the entry level of the employee?");
 			next_int = integer.nextInt();
 			Employee people = new Employee(next_int, input_name);
-
+			ofEmployees.add(people);
 			System.out.println("Would you like to add another?");
 			input_name.nextLine();
 			if(next_input.equals("yes"))

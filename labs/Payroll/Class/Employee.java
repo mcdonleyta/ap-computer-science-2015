@@ -76,8 +76,8 @@ public class Employee extends People
 
 	public Employee(int entry_level, String name)
 	{
+		super(name);
 		set_entry(entry_level);
 		set_salary(entry_level);
-		super(name);
 	}
 }

@@ -25,6 +25,6 @@ public class People
 	public People(String name)
 	{
 		set_name(name);
-		get_name();
+		//get_name();
 	}
 }
