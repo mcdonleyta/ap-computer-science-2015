@@ -15,7 +15,12 @@ public class Driver
 		int next_int = integer.nextInt();
 		String next_input;
 		boolean check = true;
+<<<<<<< HEAD
 		List <Employee> ofEmployees = new ArrayList <Employee>();
+=======
+		List ofEmployees = new ArrayList <String>; //These are never used
+		List money = new ArrayList <Integer>;
+>>>>>>> 45f6c8c0984bea0930b9f141c95e13706e100efe
 
 		System.out.println("Would you like to create an employee?");
 		System.out.println("	Yes");
@@ -30,8 +35,13 @@ public class Driver
 			input_name = input.next();
 			System.out.println("What is the entry level of the employee?");
 			next_int = integer.nextInt();
+<<<<<<< HEAD
 			Employee people = new Employee(next_int, input_name);
 			ofEmployees.add(people);
+=======
+			Employee people = new Employee(next_int, input_name); //We create an employee but never use it, and then immediately lose it (wasn't added to the list)
+
+>>>>>>> 45f6c8c0984bea0930b9f141c95e13706e100efe
 			System.out.println("Would you like to add another?");
 			input_name.nextLine();
 			if(next_input.equals("yes"))
