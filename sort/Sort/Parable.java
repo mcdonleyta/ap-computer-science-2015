@@ -2,5 +2,6 @@ package Sort;
 
 public interface Parable
 {
-	public void pare();
+	public double getValue();
+	public int pare(Parable p);
 }

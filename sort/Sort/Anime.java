@@ -14,6 +14,11 @@ public class Anime extends Medium
 		return episode_count;
 	}
 
+	public double getValue()
+	{
+		return get_episode_count();
+	}
+
 	private Anime()
 	{
 

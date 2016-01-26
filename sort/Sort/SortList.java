@@ -4,18 +4,30 @@ import java.util.List;
 
 public class SortList
 {
-	public void createList()
+	private int asize;
+
+	public void set_size(int s)
 	{
-		List <Anime> menu = new ArrayList <Anime>();
+		size = s;
 	}
 
-	public void addToList(Anime a)
+	public void createList()
 	{
-		menu.add(a);
+		List <Parable> myList = new ArrayList <Parable>();
+	}
+
+	public void add(Parable p)
+	{
+		myList.add(p);
 	}
 
 	public SortList()
 	{
 		createList();
+	}
+
+	public int size()
+	{
+		return asize;
 	}
 }
