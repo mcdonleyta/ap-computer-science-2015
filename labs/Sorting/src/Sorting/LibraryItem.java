@@ -3,7 +3,7 @@ package Sorting;
 /**
  * Created by jsdsp on 1/20/16.
  */
-public class LibraryItem extends Item {
+public abstract class LibraryItem extends Item {
 
     private static int IDCounter = 0;
     private int itemID;
@@ -13,8 +13,14 @@ public class LibraryItem extends Item {
         IDCounter++;
     }
 
-    public float getValue() {
+    public int getID() {
         return itemID;
+    }
+
+    public abstract String getSortName();
+
+    public double compareTo(Tomparable t) {
+        return itemID - ((LibraryItem)t).getID();
     }
 
     @Override

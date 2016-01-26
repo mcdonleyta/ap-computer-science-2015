@@ -21,10 +21,14 @@ public class Video extends LibraryItem {
     }
 
     @Override
-    public float getValue() {
-        return runtime;
+    public String getSortName() {
+        return title;
     }
 
+    @Override
+    public double compareTo(Tomparable t) {
+        return title.compareTo(((LibraryItem)t).getSortName());
+    }
     @Override
     public String toString() {
         return title;

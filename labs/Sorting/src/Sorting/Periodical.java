@@ -23,8 +23,13 @@ public class Periodical extends LibraryItem {
     }
 
     @Override
-    public float getValue() {
-        return pages;
+    public String getSortName() {
+        return articleName + ": " + volumeName;
+    }
+
+    @Override
+    public double compareTo(Tomparable t) {
+        return (articleName + ": " + volumeName).compareTo(((LibraryItem)t).getSortName());
     }
 
     @Override

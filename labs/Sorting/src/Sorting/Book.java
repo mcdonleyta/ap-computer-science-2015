@@ -22,8 +22,13 @@ public class Book extends LibraryItem {
     }
 
     @Override
-    public float getValue() {
-        return pages;
+    public String getSortName() {
+        return title;
+    }
+
+    @Override
+    public double compareTo(Tomparable t) {
+        return title.compareTo(((LibraryItem)t).getSortName());
     }
 
     @Override
