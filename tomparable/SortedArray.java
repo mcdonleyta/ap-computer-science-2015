@@ -10,7 +10,7 @@ public void add(TomparableItem e) {
 	else {
 		if (e.compareTo(tomparableItemList.get(tomparableItemList.size() -1)) > 0){
 			tomparableItemList.add(e);
-		}
+			}
 		for(int i = 0; i < tomparableItemList.size(); i++) {
 			//System.out.print(e.compareTo(tomparableItemList.get(i)));
 			if(e.compareTo(tomparableItemList.get(i)) < 0) {
@@ -32,7 +32,9 @@ public TomparableItem get(int index) {
 public String toString() {
 	String ret = "";
 	for(TomparableItem e : tomparableItemList) {
-		ret+= e.getValue();
+		ret += e.getName();
+		ret+= " ";
+		ret+= e.getValue();	
 		ret+= " ";
 		}
 	return ret;
