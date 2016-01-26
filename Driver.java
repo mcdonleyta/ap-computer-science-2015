@@ -10,7 +10,7 @@ public class Driver {
 		z.add(e);
 		z.add(y);
 		z.add(x);
-		System.out.println(z);
+		System.out.println(z); //should print 2 6 7
 		
 	}
 	
