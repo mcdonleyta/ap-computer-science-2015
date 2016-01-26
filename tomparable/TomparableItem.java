@@ -4,16 +4,20 @@ public abstract class TomparableItem implements Tomparable {
 	public int compareTo(TomparableItem e) {
 		int ret = -1;
 	if(this.getValue() == e.getValue()) {
-		ret = 0;
+		//ret = 0;
+		return 0;
 	}
 	else if(this.getValue() > e.getValue()){
-		ret = 1;
+		//ret = 1;
+		return 1;
 	}
-	else if ( this.getValue() < e.getValue()) {
-		ret = -1;
+	else //if ( this.getValue() < e.getValue()) {
+		//ret = -1;
+		return -1;
 	}
-	return ret;
-}
+	//return ret;
+
+
 public abstract int getValue();
 
 
