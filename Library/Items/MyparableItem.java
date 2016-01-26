@@ -4,7 +4,7 @@ public abstract class MyparableItem implements Myparable
 {
 	public int compareTo(Myparable a)
 	{
-		if(getValue() > a.getvalue())
+		if(getValue() > a.getValue())
 		{
 			return 1;
 		}

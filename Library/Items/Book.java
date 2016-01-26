@@ -5,11 +5,11 @@ public class Book extends LibraryItem
 	private String author;
 	private String title;
 	private int pages;
-	Book()
+	private Book()
 	{
 		
 	}
-	Book(String a, String t, int p)
+	public Book(String a, String t, int p)
 	{
 		author = a;
 		title = t;

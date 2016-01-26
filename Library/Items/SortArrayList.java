@@ -4,21 +4,29 @@ import java.util.*;
 public class SortArrayList
 {
 	int u = 0;
-	SortArrayList()
+	ArrayList <Myparable> myList;
+	public SortArrayList()
 	{
-		ArrayList <Myparable> myList = new ArrayList <Myparable>();
+		myList = new ArrayList <Myparable>();
     }
 	public void add(Myparable a)
 	{
+		if(myList.size() > 1)
+		{
 		for(Myparable i: myList)
 		{
+			u++;
 			if(i.compareTo(a) == 1)
 			{
 				myList.add(u,a);
 				break;
 			}
-			u++;
 		}
+	}
+	else
+	{
+		myList.add(a);
+	}
 	}
 	public Myparable get(int i)
 	{
