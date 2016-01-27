@@ -8,12 +8,12 @@ public void add(TomparableItem e) {
 		tomparableItemList.add(e);
 	} 
 	else {
-		if (e.compareTo(tomparableItemList.get(tomparableItemList.size() -1)) > 0){
+		if (e.compareTo(tomparableItemList.get(tomparableItemList.size() -1),1.1) > 0){ //gonna need flag depending on what ya wanna sort by
 			tomparableItemList.add(e);
 			}
 		for(int i = 0; i < tomparableItemList.size(); i++) {
 			//System.out.print(e.compareTo(tomparableItemList.get(i)));
-			if(e.compareTo(tomparableItemList.get(i)) < 0) {
+			if(e.compareTo(tomparableItemList.get(i),1.1) < 0) {
 				//tomparableItemList.get(i).compareTo(e)
 				tomparableItemList.add(i,e);
 				break;
@@ -36,6 +36,8 @@ public String toString() {
 		ret+= " ";
 		ret+= e.getValue();	
 		ret+= " ";
+		ret += e.getPrice();
+		ret += " ";
 		}
 	return ret;
 	}
