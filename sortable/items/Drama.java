@@ -18,6 +18,10 @@ public class Drama extends Movie {
 		return runtime;
 	}
 
+	public int getBetter(String s) {
+		return name.compareTo(s);
+	}
+
 	public Drama(double value, String _name, String _director, int _runtime) {
 		super(value);
 		name = _name;

@@ -1,3 +1,5 @@
+package items;
+
 public class LifetimeMovie extends Movie {
 
 	private String name;
