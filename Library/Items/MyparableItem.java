@@ -2,7 +2,7 @@ package Items;
 
 public abstract class MyparableItem implements Myparable
 {
-	public int compareTo(Myparable a)
+	public int compareTo(Myparable a, int which)
 	{
 		if(getValue() > a.getValue())
 		{

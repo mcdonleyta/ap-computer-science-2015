@@ -27,4 +27,38 @@ public class Book extends LibraryItem
 	{
 		return title;
 	}
+	public int compareTo(Book a, int which) //choose which is needed
+	{
+		final double Precision = 1.0e-15;
+		if(which == 0)
+		{
+		if(getTitle().charAt(0) > a.getTitle().charAt(0))
+		{
+			return 1;
+		}
+		else if(getTitle().equals(a.getTitle()))
+		{
+			return 0;
+		}
+		else
+		{
+			return -1;
+		}
+		}
+		else{
+			double simple = getValue() - a.getValue();
+		if(Math.abs(simple) <= Precision * Math.abs(getValue()))
+		{
+			return 0;
+		}
+		else if(simple < 0)
+		{
+			return -1;
+		}
+		else
+		{
+			return 1;
+		}
+		}
+	}
 }
