@@ -20,7 +20,7 @@ public class Book extends LibraryItem
 		return pages;
 	}
 	
-	public int compareTo(Book C)
+	public int compareTo(Compables C)
 	{
 		return getName().compareTo(((Book) C).getName());
 	}
