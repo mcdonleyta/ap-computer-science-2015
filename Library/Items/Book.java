@@ -32,7 +32,7 @@ public class Book extends LibraryItem
 		final double Precision = 1.0e-15;
 		if(which == 0)
 		{
-		if(getTitle().charAt(0) > a.getTitle().charAt(0))
+		if(getTitle().charAt(0) > a.getTitle().charAt(0)) //MR. M: use "return getTitle().comparTo(a.getTitle());"
 		{
 			return 1;
 		}
