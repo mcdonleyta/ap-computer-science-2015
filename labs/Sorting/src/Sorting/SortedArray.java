@@ -12,7 +12,7 @@ public class SortedArray {
     }
 
     public void add(Tomparable t) {
-        if (items.isEmpty() || t.compareTo(items.get(0)) < 0)
+        if (items.isEmpty() || t.compareTo(items.get(0)) < 0) //MR. M: The || condition isn't needed. It is taken care of below
             items.add(0, t);
         else {
             int size = items.size();
