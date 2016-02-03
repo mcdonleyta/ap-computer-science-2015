@@ -1,5 +1,8 @@
 import items.*;
 
+//Mr. M: Your coding conventions and style are very good. I like your use of the super(...). 
+//       I'd like to see you finish this lab to get full credit. 
+
 public class Sortable {
 
 	public static void main(String[] args) {
