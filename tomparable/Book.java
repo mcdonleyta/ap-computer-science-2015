@@ -4,11 +4,15 @@ public class Book extends LibraryItem{
 	private int ISBN;
 	private String name;
 	private double price;
+
 	public Book(int isbn, String setName, double purchasePrice) { //all library books have an isbn
 		ISBN=isbn;
 		name = setName;
 		price = purchasePrice;
 	}
+	//MR. M: This is the starting point of a great solution. I like the flag idea but it's not automatic and makes the calling code a little ambiguous.
+	//       It would be neat to use a "helper" method without the flag, that looks inside the object for the flag and then calls the code here.
+	//       This way each object can opt-in to how they want to be sorted. Nice job.
 	public int compareTo(TomparableItem e, String flag) { //terrible solution lol
 		if(this.getName().equals(e.getName())) {
 			return 0;
