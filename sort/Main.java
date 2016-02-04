@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 import Sort.*;
 
+//Mr. M: You haven't completed either of the two parts of the lab. Please complete the following to recover lost points:
+// 1) menu.add(...) must implement a sorted insert using the Parable interface
+// 2) you should come up with a solution such that the menu can now be sorted based on the title of the anime
+
 public class Main
 {
 	public static void main(String args[])
