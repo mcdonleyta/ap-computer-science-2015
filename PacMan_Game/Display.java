@@ -13,7 +13,7 @@ public class Display{
 	private int screenHeight = 31;
 	private int screenWidth = 28;
 	private List<List<Entity> > map = new ArrayList<List<Entity>>();
-	private List< List<Entity> > buffer = new ArrayList< List<Entity>>();
+	private List< List<Entity> > buffer = new ArrayList<List<Entity>>();
 <<<<<<< HEAD
 	public int playerposx = 14;
 	public int playerposy = 16;
