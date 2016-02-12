@@ -7,9 +7,9 @@ import battleship.*;
 public class Driver {
     public static void main(String[] args) {
         Game g = new Game();
-        String winner = "none";
-        while(winner.equals("none")) {
-            winner = g.doTurn();
+        Boolean isOver = false;
+        while(!isOver) {
+            isOver = g.doTurn();
         }
     }
 

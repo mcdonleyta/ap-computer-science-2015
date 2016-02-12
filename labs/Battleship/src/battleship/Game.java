@@ -5,22 +5,23 @@ package battleship;
  */
 public class Game {
 
-    public Player p1;
-    public Player p2;
-    Player whosTurn;
-    Player whosNotTurn;
+    Player p1;
+    Player p2;
+    private Player whosTurn;
+    private Player whosNotTurn;
 
     public Game() {
-        p1 = new Player();
-        p2 = new Player();
+        p1 = new Player("Player 1");
+        p2 = new Player("Player 2");
         whosTurn = p1;
         whosNotTurn = p2;
     }
 
     //returns winner if someone won
-    public String doTurn() {
+    public Boolean doTurn() {
 
         Display.printBoard(whosTurn);
+        Display.printEnemyShipsRemaining(whosNotTurn);
         Pos shot = Display.getShot();
         if(shot.x < Board.size.x && shot.y < Board.size.y && shot.x >= 0 && shot.y >= 0) {
             boolean hit = false;
@@ -36,11 +37,17 @@ public class Game {
             Display.invalidInput();
         }
 
-        String ret = "none";
-        if(p1.didLose())
-            ret = "Player 2";
-        else if(p2.didLose())
-            ret = "Player 1";
+        whosNotTurn.board.updateBoatsAlive();
+
+        Boolean ret = false;
+        if(p1.didLose()) {
+            Display.winner(p2);
+            ret = true;
+        }
+        else if(p2.didLose()) {
+            Display.winner(p1);
+            ret = true;
+        }
 
         if(whosTurn == p1) {
             whosTurn = p2;
@@ -49,6 +56,13 @@ public class Game {
         else {
             whosTurn = p1;
             whosNotTurn = p2;
+        }
+
+        try {
+            Thread.sleep(1000);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
         }
 
         return ret;

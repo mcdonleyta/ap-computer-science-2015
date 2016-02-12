@@ -5,8 +5,8 @@ import java.util.ArrayList;
 /**
  * Created by jsdsp on 2/11/16.
  */
-public class Board {
-    public static Pos size = new Pos(10, 10);
+class Board {
+    static Pos size = new Pos(10, 10);
 
     ArrayList<Boat> boats;
 
@@ -52,6 +52,14 @@ public class Board {
             }
         }
 
+    }
+
+    void updateBoatsAlive() {
+        for(int a = 0; a < boats.size(); a++)
+            if(boats.get(a).isDestroyed()) {
+                boats.remove(a);
+                a--; //prevents skipping an index
+            }
     }
 
 }

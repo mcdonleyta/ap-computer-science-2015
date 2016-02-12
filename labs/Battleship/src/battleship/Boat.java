@@ -5,18 +5,20 @@ import java.util.ArrayList;
 /**
  * Created by jsdsp on 2/11/16.
  */
-public class Boat {
-    int size;
+class Boat {
+    private int size;
     int health;
     private ArrayList<Pos> occupiedSpaces;
+    private ArrayList<Pos> destroyedSpaces;
 
     boolean constructionFailed;
 
-    public Boat(int _size, boolean isHorizontal, Pos firstSpace) {
+    Boat(int _size, boolean isHorizontal, Pos firstSpace) {
         constructionFailed = false;
         size = _size;
         health = size;
         occupiedSpaces = new ArrayList<>();
+        destroyedSpaces = new ArrayList<>();
 
         if(isHorizontal && firstSpace.x+size-1 < Board.size.x && firstSpace.y < Board.size.y && firstSpace.x >= 0 && firstSpace.y >= 0) {
             for (int a = 0; a < size; a++) {
@@ -32,18 +34,20 @@ public class Boat {
         }
     }
 
-    public boolean didConstructionFail() {
+    boolean didConstructionFail() {
         return constructionFailed;
     }
 
-    public ArrayList<Pos> getOccupiedSpaces() {
+    ArrayList<Pos> getOccupiedSpaces() {
         return occupiedSpaces;
     }
+    ArrayList<Pos> getDestroyedSpaces() {return destroyedSpaces;}
 
     boolean isHit(Pos space) {
         boolean toReturn = false;
         for(int a = 0; a < occupiedSpaces.size(); a++) {
             if(space.x == occupiedSpaces.get(a).x && space.y == occupiedSpaces.get(a).y) {
+                destroyedSpaces.add(space);
                 occupiedSpaces.remove(a);
                 health--;
                 toReturn = true;
