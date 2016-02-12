@@ -6,6 +6,7 @@ public class Sort {
 	private List<Movie> MovieList;
 	
 	public void add(Movie m) {
+		//MR. M: The last two conditions could be condensed into on by >= 0
 		if(MovieList.size() == 0 || m.getBetter(MovieList.get(MovieList.size() - 1)) == 1 || m.getBetter(MovieList.get(MovieList.size() - 1)) == 0) {
 			MovieList.add(m);
 		}
@@ -13,6 +14,7 @@ public class Sort {
 			MovieList.add(0, m);
 		}
 		else {
+			//Mr. M: nice job
 			Boolean done = false;
 			int index = MovieList.size() / 2;
 			while(done != true) {
