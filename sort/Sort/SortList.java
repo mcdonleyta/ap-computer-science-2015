@@ -13,7 +13,8 @@ public class SortList
 
 	public void add(Parable p)
 	{
-		myList.add(p);
+		myList.add(p); //Mr. M: You should implement a sorted insertion here based on compareTo(...) from the Parable interface
+                               // The code has been discussed in class and was one of the answers to a previous written assignment. 
 	}
 
 	public void get(int index)
