@@ -21,7 +21,12 @@ public class Board extends GridSpace
 		{
 			for(int j = 0; j<10;j++)
 			{
-				if(myBoard.get(i).get(j).getOccupied() == true)
+				if(myBoard.get(i).get(j).getOccupied() == true && myBoard.get(i).get(j).getHit() == true)
+				{
+					myBoard.get(i).get(j).printHit();
+					System.out.print("sdasd");
+				}
+				else if(myBoard.get(i).get(j).getOccupied() == true)
 				{
 					myBoard.get(i).get(j).printboat();
 				}
@@ -64,6 +69,20 @@ public class Board extends GridSpace
 		check++;
 		}
 		System.out.println("Done");
+	}
+	public boolean checkSpot(int x, int y)
+	{
+		return myBoard.get(y).get(x).getOccupied();
+	}
+	public void setSpot(int x, int y)
+	{
+		boolean tru = true;
+		myBoard.get(y).get(x).setOccupied(tru);
+	}
+	public void setHitBoard(int x, int y)
+	{
+		boolean tru = true;
+		myBoard.get(y).get(x).setHit(tru);
 	}
 }
 	
