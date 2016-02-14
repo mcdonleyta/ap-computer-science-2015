@@ -8,98 +8,10 @@ public class Board implements Display {
 	private Cruiser ted; // i am very proud of this pun.
 	private Submarine U_Boat; //this boat is german
 	private /* Star */Destroyer executor; //hint: star wars 
+	private ArrayList<Boat> chklist = new ArrayList<Boat>();
 
 		
-	/* IVE CURRENTLY DECIDED TO AUTOGENERATE THE MAP; USER INPUT HAS TOO MANY CORNER CASES FOR NOW. WILL IMPLEMENT AFTER CORE FUNCTIONALITY
-	public void makeShips(int i) {
-		Scanner sc = new Scanner(System.in);
-		int x;
-		int y;
-		String dir;
-		System.out.println("Your ships will be placed in the order of: Battleship,Carrier, Cruiser, Submarine, Destroyer");
-		while(i<5) {
-		System.out.print("Where would you like to place your ship? " );
-		System.out.print("X: ");	
-		x = sc.nextInt();
-		System.out.print("Y: ");
-		y = sc.nextInt();
-		System.out.println();	
-		System.out.print("down, up, left, right? ");
-		dir = sc.next();
-			if(i==0) {
-			bs=new BattleShip(y,x,dir);
-			this.set_ships(bs);	
-		}
-			else if(i==1) {
-			harry=new Carrier(y,x,dir);
-			this.set_ships(harry);
-		}
-			else if(i==2) {
-				ted= new Cruiser(y,x,dir);
-				this.set_ships(ted);
-		}
-			else if(i==3) {
-				U_Boat=new Submarine(y,x,dir);
-				this.set_ships(U_Boat);
-		}
-			else {
-				executor= new Destroyer(y,x,dir);
-				this.set_ships(executor);
-		}
-		i++;
-		this.display();				
-			}
-			
-	}
-		
-	private Boat fixShips(Boat ship) {
-		Scanner sc = new Scanner(System.in);
-		int x,y;
-		System.out.print("Where would you like to place your ship? " );
-		System.out.print("X: ");	
-		x = sc.nextInt();
-		System.out.print("Y: ");
-		y = sc.nextInt();
-		ship.setRow(y);
-		ship.setCol(x);	
-		return ship;
-	}	
-	private void set_ships(Boat ship) {
-		int y = ship.getRow();
-		int x = ship.getCol();
-		int length = ship.getLength();
-		String direction = ship.getDirection();
-		String type = ship.getType();			
-		if (direction.equals("down")){
-			if(y+length > 10) {
-				//DO SOMETHING HERE TO HANDLE ERROR
-				}
-			for(int i=0;i<length;i++){
-				board.get(y).set(x,new GridSpace(ship));
-				y++;
-			}
-		}
-		
-		else if(direction.equals("up")) {
-			if(y-length <0) {
-				//DO SOMETHING TO HANDLE ERROR	
-			}
-			for(int i = 0; i<length-1;i++) {
-				board.get(y).set(x,new GridSpace(ship));
-				y--;
-			}
-		}
-		else if(direction.equals("left")) {
-			if(x-length <0){
-				//TODO				
-			}
-			for
-			
-			
-		}
-		
-	}
-	*/
+	/* IVE CURRENTLY DECIDED TO AUTOGENERATE THE MAP; USER INPUT HAS TOO MANY CORNER CASES FOR NOW. WILL IMPLEMENT AFTER CORE FUNCTIONALITY */
 	public void makeShipsPlayer1() {
 		ArrayList<Boat> blist = new ArrayList<Boat>();
 		blist.add(bs=new BattleShip(0,0,"down"));
@@ -107,8 +19,13 @@ public class Board implements Display {
 		blist.add(ted = new Cruiser(5,5,"down"));
 		blist.add(U_Boat= new Submarine(9,2,"right"));
 		blist.add(executor = new Destroyer(6,3,"down"));
+		chklist.add(bs);
+		chklist.add(harry);
+		chklist.add(ted);
+		chklist.add(U_Boat);
+		chklist.add(executor);
 		for(Boat ship:blist) {
-		int y = ship.getRow();
+		int y = ship.getRow();z
 		int x = ship.getCol();
 		int length = ship.getLength();
 		String direction = ship.getDirection();
@@ -166,7 +83,12 @@ public class Board implements Display {
 		blist.add(harry = new Carrier(0,0,"right")); //y,x
 		blist.add(ted = new Cruiser(5,9,"down"));
 		blist.add(U_Boat= new Submarine(9,2,"right"));
-		blist.add(executor = new Destroyer(8,7,"down")); 
+		blist.add(executor = new Destroyer(8,7,"down")); 		
+		chklist.add(bs);
+		chklist.add(harry);
+		chklist.add(ted);
+		chklist.add(U_Boat);
+		chklist.add(executor);
 		for(Boat ship:blist) {
 		int y = ship.getRow();
 		int x = ship.getCol();
@@ -199,16 +121,11 @@ public class Board implements Display {
 	
 	}
 	public Boat checkLife() {
-		ArrayList<Boat> blist = new ArrayList<Boat>();
-		blist.add(bs);
-		blist.add(harry);
-		blist.add(ted);
-		blist.add(U_Boat);
-		blist.add(executor);
-		for(int i =0; i<blist.size()-1; i++) {
-			if(blist.get(i).getLife() <= 0) {
-				Boat temp = blist.get(i);
-				blist.remove(blist.get(i));
+
+		for(int i =0; i<chklist.size()-1; i++) {
+			if(chklist.get(i).getLife() <= 0) {
+				Boat temp = chklist.get(i);
+				chklist.remove(chklist.get(i));
 				return temp;
 			}
 		}
