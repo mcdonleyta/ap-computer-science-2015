@@ -1,4 +1,6 @@
-public class Boat
+package Battleship;
+
+public class Boat extends GridSpace
 {
 	public Boat()
 	{

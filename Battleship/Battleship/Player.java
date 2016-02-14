@@ -1,12 +1,19 @@
-public class Player extends Boat
+package Battleship;
+import java.util.*;
+
+public class Player
 {
-	Player()
+	public ArrayList<Boat> Boats = new ArrayList<Boat>();
+	public Player()
 	{
-		new List<Boat> Boats = new List<Boat>();
+		
 	}
 	public void setup()
 	{
-		System.out.println("Use WASD to put ships down");
-		System.out.println("Type H to rotate");
+		System.out.println("Welcome to Battleship");
+	}
+	public void addShip(Boat b)
+	{
+		Boats.add(b);
 	}
 }
