@@ -3,8 +3,10 @@ import java.util.*;
 public abstract class Boat {
 	private int row, col;
 	private String directionVector;
-	protected int length;
+	protected int length; //honestly ive never used protected so i wanted to see how it works
 	protected String type = "";
+	protected int id=0;
+	protected int life; 
 	
 	public Boat (int starting_row_i, int starting_col_i, String directionVector_i) {
 		row = starting_row_i;
@@ -26,6 +28,24 @@ public abstract class Boat {
 	}
 	public String getType() {
 		return type;
+	}
+	public void setRow(int r) {
+		row = r;
+	}
+	public void setCol(int c) {
+		col = c;
+	}
+	public int getID() {
+		return id;
+	}
+	public void decrementLife() {
+	life--;	
+	}
+	public String toString() {
+		return type;
+	}
+	public int getLife() {
+		return life;
 	}
 
 }

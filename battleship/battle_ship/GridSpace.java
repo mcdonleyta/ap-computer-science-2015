@@ -11,8 +11,11 @@ public class GridSpace {
 		type = null;
 		
 	}
-	public String toString() {
-		//TODO
-		return "TEST PLZ WRK";
+	public Boat getType() {
+		return type;
+	}
+	public void setType(Boat type_i) {
+		type = type_i;
+		
 	}
 }
