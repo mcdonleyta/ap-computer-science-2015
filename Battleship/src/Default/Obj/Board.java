@@ -1,5 +1,7 @@
 package Default.Obj;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Board {
 
@@ -18,7 +20,7 @@ public class Board {
         if(type.equals("AircraftCarrier"))
             b = new AircraftCarrier();
         else if(type.equals("Battleship"))
-            b = new Battleship();
+            b = new BBattleship();
         else if(type.equals("Submarine"))
             b = new Submarine();
         else if(type.equals("Destroyer"))
@@ -36,16 +38,8 @@ public class Board {
         }
     }
 
-    public void printBoard() {
-        for(int i = 0; i < 10; i++) {
-            for(GridSpace g: board.get(i)) {
-                if(!g.getBoat())
-                    System.out.print(g.getIcon());
-                else
-                    System.out.print('X');
-            }
-            System.out.println();
-        }
+    public GridSpace get(int x, int y) {
+        return board.get(y).get(x);
     }
 
     public Board() {

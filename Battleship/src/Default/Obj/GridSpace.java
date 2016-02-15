@@ -12,7 +12,7 @@ public class GridSpace {
     public Boolean getHit() {return isHit;}
     public Boolean hit() {
         isHit = true;
-        icon = 'x';
+        icon = 'X';
         return false;
     }
     public Boolean getBoat() {return isBoat;}

@@ -1,5 +1,8 @@
 package Default.Obj;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Boat {
 
@@ -46,7 +49,6 @@ public class Boat {
     }
 
     public List<BoatSpace> placeShip(int startX, int startY, String Direction) {
-        System.out.println(Direction);
         if(Direction.equals("North")) {
             for(int i = startY; i < length + startY; i++) {
                 spaces.add(new BoatSpace(startX, i));
