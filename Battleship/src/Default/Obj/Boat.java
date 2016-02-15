@@ -8,6 +8,7 @@ public class Boat {
 
     private List<BoatSpace> spaces;
     private int length;
+    private String type;
 
     public Boolean hit(int x, int y) {
         for(int i = 0; i < spaces.size(); i++) {
@@ -72,8 +73,17 @@ public class Boat {
         return spaces;
     }
 
+    public String getType() {return type; }
+
+    public List<BoatSpace> getBoats() { return spaces; }
+
     public Boat() {
         spaces = new ArrayList<BoatSpace>(0);
+    }
+
+    public Boat(String _type) {
+        spaces = new ArrayList<BoatSpace>(0);
+        type = _type;
     }
 
 }

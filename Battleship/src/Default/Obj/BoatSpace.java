@@ -10,12 +10,10 @@ public class BoatSpace extends GridSpace{
     public Boolean isBoat() {return true;}
     public BoatSpace(int _x, int _y) {
         super(_x, _y, true);
-        super.setIcon('X');
     }
 
     public BoatSpace() {
         super();
-        super.setIcon('X');
     }
 
 }

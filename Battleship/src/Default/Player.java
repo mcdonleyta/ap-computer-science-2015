@@ -12,10 +12,12 @@ public class Player {
     private Display playerOut;
     private List<Boat> boats;
     private List<String> boatTypes;
+    private String lastSunk;
     private int health;
 
     public String getName() { return playerName; }
     public Board getBoard() { return playerBoard; }
+    public int getHealth() {return health; }
 
     public GridSpace move() {
         Boolean complete = false;
@@ -29,6 +31,24 @@ public class Player {
                 complete = true;
         }while(!complete);
         return g;
+    }
+
+    //Returns true if boat is sunk
+    public Boolean hit(int _x, int _y) {
+        if(playerBoard.get(_x, _y).getBoat()) {
+            for(Boat ba: boats) {
+                for(BoatSpace bb: ba.getBoats()) {
+                    if(bb.getX() == _x && bb.getY() == _y) {
+                        bb.hit();
+                        ba.hit(_x, _y);
+                        lastSunk = ba.getType();
+                        return ba.getSunk();
+                    }
+                }
+            }
+        }
+        playerBoard.get(_x, _y).hit();
+        return false;
     }
 
     public void addBoats() {
@@ -75,6 +95,13 @@ public class Player {
             health++;
         }
     }
+
+    public void sunkMessage(String pName) {
+        playerOut.output(pName + " sunk your " + lastSunk + "!");
+        playerOut.output(playerName + " ");
+    }
+
+    public void decreaseHealth() { health--; }
 
     public Player(String _playerName) {
         playerName = _playerName;

@@ -20,7 +20,7 @@ public class Display {
         x = inInt.nextInt();
         System.out.print("\nY: ");
         y = inInt.nextInt();
-        return new GridSpace(x, y);
+        return new GridSpace(x - 1, y - 1);
     }
 
     //Returns a String made of the starting x and y position and the Direction ex: 36South
@@ -81,6 +81,19 @@ public class Display {
         String ret = inString.nextLine();
         System.out.println();
         return ret;
+    }
+    public void output(String s) {
+        System.out.println(s);
+    }
+
+    public void clrScreen() {
+        for(int i = 0; i < 100; i++)
+            System.out.println();
+    }
+
+    public void anyKey(String msg) {
+        System.out.println(msg + "Press any key to continue: ");
+        inString.nextLine();
     }
 
     public Display() {
