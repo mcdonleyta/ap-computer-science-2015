@@ -1,4 +1,5 @@
 package Obj;
+import Obj.*;
 
 public class BoatSpace extends GridSpace {
 

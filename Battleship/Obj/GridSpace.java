@@ -7,7 +7,7 @@ public class GridSpace {
 	int x, y;
 	
 	public char getIcon() {return icon;}
-	public char setIcon(char _icon) {icon = _icon;}
+	public void setIcon(char _icon) {icon = _icon;}
 	public Boolean getHit() {return isHit;}
 	public Boolean hit() {
 		isHit = true;
@@ -21,8 +21,8 @@ public class GridSpace {
 	public GridSpace() {
 		isHit = false;
 		icon = 'O';
-		x = null;
-		y = null;
+		x = -1;
+		y = -1;
 	}
 
 	public GridSpace(int _x, int _y) {
