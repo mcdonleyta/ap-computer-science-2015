@@ -16,6 +16,21 @@ public class Destroyer extends Boat
 	}
 	public boolean checkCond()
 	{
+		if(space1 == true && space2 == true)
+		{
+			sunk = true;
+		}
 		return sunk;
+	}
+	public void setSpace(int x, int y)
+	{
+		if(x1 == x && y1 == y)
+		{
+			space1 = true;
+		}
+		else if(x2 == x && y2 == y)
+		{
+			space2 = true;
+		}
 	}
 }

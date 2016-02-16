@@ -5,6 +5,7 @@ public class GridSpace
 {
 	boolean Occupied = false;
 	boolean Hit = false;
+	boolean chosen = false;
 	public GridSpace()
 	{
 		
@@ -33,6 +34,10 @@ public class GridSpace
 	{
 		return Hit;
 	}
+	public boolean getChosen()
+	{
+		return chosen;
+	}
 	public void setOccupied(boolean set)
 	{
 		Occupied = set;
@@ -40,5 +45,9 @@ public class GridSpace
 	public void setHit(boolean set)
 	{
 		Hit = set;
+	}
+	public void setChosen(boolean set)
+	{
+		chosen = set;
 	}
 }

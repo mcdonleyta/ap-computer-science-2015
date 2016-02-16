@@ -19,6 +19,25 @@ public class Cruiser extends Boat
 	}
 	public boolean checkCond()
 	{
+		if(space1 == true && space2 == true && space3 == true)
+		{
+			sunk = true;
+		}
 		return sunk;
+	}
+	public void setSpace(int x, int y)
+	{
+		if(x1 == x && y1 == y)
+		{
+			space1 = true;
+		}
+		else if(x2 == x && y2 == y)
+		{
+			space2 = true;
+		}
+		else if(x3 == x && y3 == y)
+		{
+			space3 = true;
+		}
 	}
 }
