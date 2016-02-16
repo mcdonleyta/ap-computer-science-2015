@@ -4,7 +4,7 @@ import java.util.*;
 public class GridSpace
 {
 	boolean Occupied = false;
-	public boolean hit = false;
+	boolean Hit = false;
 	public GridSpace()
 	{
 		
@@ -13,11 +13,11 @@ public class GridSpace
 	{
 			Occupied = Here;
 	}
-	public void printspace()
+	public void printSpace()
 	{
 		System.out.print("_");
 	}
-	public void printboat()
+	public void printBoat()
 	{
 		System.out.print("X");
 	}
@@ -31,7 +31,7 @@ public class GridSpace
 	}
 	public boolean getHit()
 	{
-		return hit;
+		return Hit;
 	}
 	public void setOccupied(boolean set)
 	{
@@ -39,7 +39,6 @@ public class GridSpace
 	}
 	public void setHit(boolean set)
 	{
-		hit = set;
-		System.out.println("HX");
+		Hit = set;
 	}
 }

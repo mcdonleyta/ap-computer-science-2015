@@ -24,19 +24,19 @@ public class Board
 				if(myBoard.get(i).get(j).getOccupied() == true && myBoard.get(i).get(j).getHit() == true)
 				{
 					myBoard.get(i).get(j).printHit();
-					System.out.print("sdasd");
 				}
 				else if(myBoard.get(i).get(j).getOccupied() == true)
 				{
-					myBoard.get(i).get(j).printboat();
+					myBoard.get(i).get(j).printBoat();
 				}
 				else
 				{
-					myBoard.get(i).get(j).printspace();
+					myBoard.get(i).get(j).printSpace();
 				}
 			}
 			System.out.println("");
 		}
+		System.out.println("");
 	}
 	public void addShip(int x, int y, int _x, int _y, int num)
 	{
@@ -68,7 +68,6 @@ public class Board
 			}
 		check++;
 		}
-		System.out.println("Done");
 	}
 	public boolean checkSpot(int x, int y)
 	{
@@ -80,8 +79,7 @@ public class Board
 	}
 	public void setHitBoard(int x, int y)
 	{
-		myBoard.get(y).get(x).hit=true;
-		System.out.println("HY");
+		myBoard.get(y).get(x).setHit(true);
 	}
 }
 	
