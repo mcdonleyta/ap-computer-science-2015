@@ -18,9 +18,9 @@ public class Game {
             d.anyKey(p1.getName() + " ");
             d.clrScreen();
             //MR. M: d.printBoard(p2.getBoard());
-            g = p1.move();
-            isSink = p2.hit(g.getX(), g.getY());
-            if(isSink) {
+            g = p1.move();                       //MR. M: Move checks valid unused locations using p1's board
+            isSink = p2.hit(g.getX(), g.getY()); //       but we record the shots on P2's board
+            if(isSink) {                         // => so when P2 tries to make an identical shot, they can not!
                 p2.sunkMessage(p1.getName());
                 p2.decreaseHealth();
                 if(p2.getHealth() == 0) {
