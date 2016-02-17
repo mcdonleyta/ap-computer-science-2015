@@ -12,11 +12,12 @@ public class Game {
     public void turn(Boolean which) {
         GridSpace g;
         Boolean isSink, isKill;
-        d.printBoard(p1.getBoard());
-        d.printBoard(p1.getBoard());
+        d.printBoard(p1.getBoard()); //MR. M: You probably didn't mean to print out the same board twice
+        d.printBoard(p1.getBoard()); // I would delete these lines and move them into the correct player's IF clause
         if(which) {
             d.anyKey(p1.getName() + " ");
             d.clrScreen();
+            //MR. M: d.printBoard(p2.getBoard());
             g = p1.move();
             isSink = p2.hit(g.getX(), g.getY());
             if(isSink) {
@@ -30,6 +31,7 @@ public class Game {
         else {
             d.anyKey(p2.getName() + " ");
             d.clrScreen();
+            //MR. M: d.printBoard(p1.getBoard());
             g = p2.move();
             isSink = p1.hit(g.getX(), g.getY());
             if(isSink) {
