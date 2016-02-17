@@ -1,3 +1,6 @@
+//Mr. M: So far so good. The implementation looks solid and clean and I like the skeleton/stub code you have going. Please finish up
+//  for the rest of the credit.
+
 import battleship.*;
 
 import java.util.*;
