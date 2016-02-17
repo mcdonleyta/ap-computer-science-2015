@@ -1,3 +1,5 @@
+// Mr. M: The structure and style of your code is very clean. Nice work!
+
 package battleship;
 
 /**
@@ -7,8 +9,8 @@ public class Game {
 
     Player p1;
     Player p2;
-    private Player whosTurn;
-    private Player whosNotTurn;
+    private Player whosTurn;   //Mr. M: This was a great choice for the variable names. A good example of "self documenting code"
+    private Player whosNotTurn;// this makes the code a lot easier to understand
 
     public Game() {
         p1 = new Player("Player 1");
