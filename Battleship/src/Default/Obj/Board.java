@@ -43,9 +43,10 @@ public class Board {
     }
 
     public Board() {
-        board = new ArrayList< ArrayList<GridSpace> >(10);
-        for(int i = 0; i < 10; i++)
-            board.add(new ArrayList<GridSpace>(10));
+        board = new ArrayList< ArrayList<GridSpace> >(10); //MR. M: We don't need to create a list with an inital size of 10
+        for(int i = 0; i < 10; i++)                        // and then add 10 more to it (do one or the other)
+            board.add(new ArrayList<GridSpace>(10));       //MR. M: Same thing here, genBoard will take care of adding to the list
     }
-
+                                                         //MR M: We either initialize the default size and then use set(...) OR do add(...)
+                                                         //Not both!
 }
