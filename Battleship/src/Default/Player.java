@@ -34,7 +34,7 @@ public class Player {
     }
 
     //Returns true if boat is sunk
-    public Boolean hit(int _x, int _y) {
+    public Boolean hit(int _x, int _y) {  //MR. M: No check to ensure _x, _y are not <0 or >= 10
         if(playerBoard.get(_x, _y).getBoat()) {
             for(Boat ba: boats) {
                 for(BoatSpace bb: ba.getBoats()) {
@@ -52,8 +52,8 @@ public class Player {
         return false;
     }
 
-    public void addBoats() {
-        String ret;
+    public void addBoats() { //MR. M: This function does not check if the boat would span off the board.
+        String ret;          //Instead we get a crash by index out of bounds.
         int startX = 0, startY = 0;
         String Direction = "North";
         Boat b = new Boat();
@@ -82,8 +82,8 @@ public class Player {
                         b = new Boat();
                     spaces = b.placeShip(startX, startY, Direction);
                     for(BoatSpace x: spaces) {
-                        if (playerBoard.get(x.getX(), x.getY()).getBoat())
-                            isFail = true;
+                        if (playerBoard.get(x.getX(), x.getY()).getBoat()) //Mr. M: Index out of bounds if placeShip 
+                            isFail = true;                                 // allows a boat to span off board
                         if(x.getX() > 9 || x.getX() < 0 || x.getY() > 9 || x.getY() < 0)
                             isFail = true;
                     }
