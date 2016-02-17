@@ -47,7 +47,8 @@ public class Player {
                 }
             }
         }
-        playerBoard.get(_x, _y).hit();
+        playerBoard.get(_x, _y).hit(); //MR. M: This line of code needs to be moved before the if(..) otherwise 
+                                       //the player board may not be updated if we "return ba.getSunk();"
         return false;
     }
 
