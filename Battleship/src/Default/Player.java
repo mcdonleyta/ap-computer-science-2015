@@ -25,8 +25,8 @@ public class Player {
         GridSpace g;
         do {
             g = playerOut.playerMove(isFail, playerName);
-            if (playerBoard.get(g.getX(), g.getY()).getHit())
-                isFail = true;
+            if (playerBoard.get(g.getX(), g.getY()).getHit()) //MR. M: This is a logical design error, we should be checking the other
+                isFail = true;                                // player's board... The one we recorded our shots on
             else
                 complete = true;
         }while(!complete);
