@@ -1,3 +1,6 @@
+//MR. M: Nice job! I like the implementation and how straight forward it is. The only issue is that the boats extend from gridspace. 
+//   However, the code doesn't take advantage of that which would eliminate the need to track each boat separately.
+
 import Battleship.*;
 import java.util.*;
 
