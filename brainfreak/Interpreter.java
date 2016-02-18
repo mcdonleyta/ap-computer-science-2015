@@ -1,9 +1,10 @@
 package brainfreak;
+
 import java.util.*;
 
 public class Interpreter {
 
-	List<char> codes;
+	List<Character> codes;
 	TapeMachine tapes;
 
 	public void decompose(String code) {
@@ -43,7 +44,7 @@ public class Interpreter {
 	}
 
 	public Interpreter() {
-		codes = new ArrayList<char>(0);
+		codes = new ArrayList<Character>();
 		tapes = new TapeMachine();
 	}
 	

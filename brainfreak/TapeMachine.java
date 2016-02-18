@@ -7,13 +7,18 @@ public class TapeMachine implements TuringInterface {
 	private int head;
 
 	public void moveLeft() { head--; }
-	public void moveRight() { head++; }
+	public void moveRight() {
+		head++;
+		tape.add(new Integer(0));
+	}
 	public void inc() { tape.set(head, tape.get(head) + 1); }
 	public void dec() { tape.set(head, tape.get(head) - 1); }
-	public void getValue() { System.out.print(tape.get(head)); }
+	public void getValue() { System.out.println(tape.get(head).intValue()); }
 
 	public TapeMachine() {
 		tape = new ArrayList<Integer>(0);
+		tape.add(new Integer(0));
+		head = 0;
 	}
 
 }

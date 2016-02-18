@@ -1,4 +1,3 @@
-package brainfreak;
 import brainfreak.*;
 import java.util.*;
 
