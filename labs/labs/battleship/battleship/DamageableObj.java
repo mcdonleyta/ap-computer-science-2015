@@ -1,3 +1,5 @@
+//Mr. M: This is a great use of an interface. Nice job!
+
 package battleship;
 
 import java.util.*;
