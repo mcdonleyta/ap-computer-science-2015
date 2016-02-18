@@ -3,36 +3,45 @@ import brainfreak.*;
 public class BrainFreakInterpret {
 	public TapeMachine tape;
 	public void run(String code) {
-		boolean stop = true;
-		for(int i= 0;i<code.length();i++) {
+		for(int i= tape.getHead();i<code.length();i++) {
 			if(code.charAt(i) == '>') {
 				tape.moveRight();
+				System.out.print("Moved Right");
 			}
-			if(code.charAt(i) == '<')
+			if(code.charAt(i) == '<') {
 				tape.moveLeft();
+				System.out.print("Moved Left!");
+			}
 			if(code.charAt(i) == '+') {
-				//System.out.print("Incremented!");
+				System.out.print("Incremented!");
 				tape.increment();
 			}
-			if(code.charAt(i) == '-')
+			if(code.charAt(i) == '-') {
+				System.out.print("Decremented!");
 				tape.decrement();
+			}
 			if(code.charAt(i) == '['){
-				System.out.print("setLabel!");
-				tape.setLabel(i+1);
-			}
-			if(code.charAt(i) == ']') {
-				if(tape.getHead() >0) {
-					System.out.print("looped back!");
-					tape.setHead(tape.getLabel());
-					i = tape.getHead();
+				int findEndPoint = findBraket(code,i);
+				int length = code.substring(i+1,findEndPoint).length();
+				do {
+					run(code.substring(i+1,findEndPoint)); //recursion yay
+					length--;
+					System.out.print("looped");
 				}
+				while(length >1);
+				i = findEndPoint;
 			}
+
 			if (code.charAt(i) == '.') {
-				System.out.print(tape.get(tape.getHead()));
-				stop = false;
+				System.out.println(tape.get(tape.getHead()));
 			}
 	}
 }
+	public int findBraket(String inThis, int start) {
+		return inThis.indexOf(']');
+	}
+	
+		
 	public BrainFreakInterpret() {
 		tape = new TapeMachine();
 	}
