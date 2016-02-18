@@ -6,7 +6,7 @@ public class BrainFreakInterpret {
 		for(int i= tape.getHead();i<code.length();i++) {
 			if(code.charAt(i) == '>') {
 				tape.moveRight();
-				System.out.print("Moved Right");
+				System.out.print("Moved Right"); //found these helpful for debug
 			}
 			if(code.charAt(i) == '<') {
 				tape.moveLeft();
