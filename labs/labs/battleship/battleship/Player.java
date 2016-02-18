@@ -5,13 +5,12 @@ import java.util.Scanner;
 
 public class Player{
 	
-	private Board usersBoard;
+	private Board usersBoard = new Board();
 	private String username;
 	
 	public Player(String un)
 	{
 		username = un;
-		Board usersBoard = new Board();
 		System.out.println("Now time to place your ships, " + username + "!");
 		placeBoats();
 	}
@@ -52,7 +51,7 @@ public class Player{
 	
 	public int getShips()
 	{
-		usersBoard.getShipsAfloat();
+		return usersBoard.getShipsAfloat();
 	}
 	
 	public void outputBoard()

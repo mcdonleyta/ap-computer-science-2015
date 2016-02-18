@@ -13,9 +13,9 @@ public class Game{
 	{
 		Scanner scan = new Scanner(System.in);
 		System.out.print("User 1 username: ");
-		one = new Player(scan.nextLine());
+		one = new Player(scan.next());
 		System.out.print("User 2 username: ");
-		two = new Player(scan.nextLine());
+		two = new Player(scan.next());
 	}
 	
 	public boolean playRound()
