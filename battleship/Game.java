@@ -1,3 +1,5 @@
+//Mr. M: Great design and clean implementation. Great work! I like that you override toString in the boat class. 
+
 import battle_ship.*;
 import java.util.*;
 public class Game {
