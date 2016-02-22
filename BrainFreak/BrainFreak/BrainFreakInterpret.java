@@ -5,6 +5,7 @@ public class BrainFreakInterpret
 {
 	TapeMachine Tape;
 	int loopx;
+	boolean check = false;
 	public BrainFreakInterpret()
 	{
 		TapeMachine Tape = new TapeMachine();
@@ -45,8 +46,9 @@ public class BrainFreakInterpret
 			{
 				loopx = x;
 			}
-			else if(input.charAt(x) == ']')
+			else if(input.charAt(x) == ']' && check == false)
 			{
+				check = true;
 				x = loopx;
 			}
 		}
