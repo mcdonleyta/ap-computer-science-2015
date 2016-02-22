@@ -1,9 +1,0 @@
-package Ship;
-import Map.*;
-
-public abstract class Ship extends GridSpace
-{
-	private int health = 0;
-	public abstract int get_health();
-	
-}
