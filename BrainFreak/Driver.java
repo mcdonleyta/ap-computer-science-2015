@@ -5,27 +5,26 @@ public class Driver
 {
 	public static void main(String args[])
 	{
+		int i;
+		char a;
 		TapeMachine tape = new TapeMachine();
-		tape.run("+++");
-		for(int i = 0; i < tape.getLength() + 1; i++)
-		{
-			tape.print();
+		tape.run("++++");
 
-			if(tape.getChars(i) == '+')
+		for(i = 0; i < tape.getLength() + 1; i++)
+		{
+			a = tape.getChars(i);
+			switch (a)
 			{
-				tape.increment();
-			}else
-			if(tape.getChars(i) == '-')
-			{
-				tape.decrement();
-			}else
-			if(tape.getChars(i) == '>')
-			{
-				tape.move_right();
-			}else
-			if(tape.getChars(i) == '<')
-			{
-				tape.move_left();
+				case '+':
+					tape.increment();
+					i = 0;
+					break;
+				case '-':
+					i = 0;
+					tape.decrement();
+					break;
+				default:
+					break;
 			}
 
 			tape.removePrevious();

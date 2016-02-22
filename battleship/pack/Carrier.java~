@@ -1,0 +1,30 @@
+package Ship;
+
+public class Carrier extends Ship
+{
+	private int print;
+	private int health;
+	private char icon;
+
+	public Carrier()
+	{
+		print = 5;
+		health = 1;
+		icon = 'C';
+	}
+
+	public char get_icon()
+	{
+		return icon;
+	}
+
+	public int printCar()
+	{
+		return print;
+	}
+
+	public int get_health()
+	{
+		return health;
+	}
+}
