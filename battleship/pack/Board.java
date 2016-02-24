@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class Board
 {
+	private int numSub, numCar, numBat, numDes, numCru;
+	private int ships = 5;
 	ArrayList < ArrayList <GridSpace> > dis = new ArrayList < ArrayList <GridSpace> > ();
 	ArrayList < ArrayList <GridSpace> > dis2 = new ArrayList < ArrayList <GridSpace> > ();
-	Scanner scan = new Scanner();
+	//Scanner scan = new Scanner();
 	int r, t;
 	String s;
-	//ArrayList <GridSpace> row = new ArrayList <GridSpace>();
 
 	public Board()
 	{
@@ -48,15 +49,22 @@ public class Board
 	public void add_ships()
 	{
 		addSubmarine();
-		//addCarrier();
-		//addBattleship();
-		//addCruiser();
-		//addDestroyer();		
+		addCarrier();
+		addBattleship();
+		addCruiser();
+		addDestroyer();		
+	}
+
+	public int get_num_ships()
+	{
+		return ships;
 	}
 
 	public void addSubmarine()
 	{
 		Ship a = new Submarine();
+		numSub = a.get_print(); 
+
 		/*System.out.println("Would you like to place it as a row or column? (Input as r or c");
 		s = scan.nextLine();
 
@@ -100,9 +108,22 @@ public class Board
 		}
 	}
 
+	public void checkSubmarine()
+	{
+		numSub--;
+		if(numSub == 0)
+		{
+			System.out.println("");
+			System.out.println("You sunk the Submarine");
+			System.out.println("");
+			ships--;
+		}
+	}
+
 	public void addCarrier()
 	{
 		Ship a = new Carrier();
+		numCar = a.get_print();
 		for(int i = 1;  i < a.get_print() + 1; i++)
 		{
 			for(int j = 5; j < 6; j++)
@@ -112,9 +133,22 @@ public class Board
 		}
 	}
 
+	public void checkCarrier()
+	{
+		numCar--;
+		if(numCar == 0)
+		{
+			System.out.println("");
+			System.out.println("You sunk the Carrier");
+			System.out.println("");
+			ships--;
+		}
+	}
+
 	public void addBattleship()
 	{
 		Ship a = new Battleship();
+		numBat = a.get_print();
 		for(int i = 6;  i < 7; i++)
 		{
 			for(int j = 0; j < a.get_print(); j++)
@@ -124,9 +158,22 @@ public class Board
 		}
 	}
 
+	public void checkBattleship()
+	{
+		numBat--;
+		if(numBat == 0)
+		{
+			System.out.println("");
+			System.out.println("You sunk the Battleship");
+			System.out.println("");
+			ships--;
+		}
+	}
+
 	public void addDestroyer()
 	{
 		Ship a = new Destroyer();
+		numDes = a.get_print();
 		for(int i = 9;  i < 10; i++)
 		{
 			for(int j = 3; j < a.get_print() + 3; j++)
@@ -136,15 +183,40 @@ public class Board
 		}
 	}
 
+	public void checkDestroyer()
+	{
+		numDes--;
+		if(numDes == 0)
+		{
+			System.out.println("");
+			System.out.println("You sunk the Destroyer");
+			System.out.println("");
+			ships--;
+		}
+	}
+
 	public void addCruiser()
 	{
 		Ship a = new Cruiser();
+		numCru = a.get_print();
 		for(int i = 7;  i < a.get_print() + 7; i++)
 		{
 			for(int j = 6; j < 7; j++)
 			{
 				dis.get(i).set(j, new GridSpace(a));
 			}
+		}
+	}
+
+	public void checkCruiser()
+	{
+		numCru--;
+		if(numCru == 0)
+		{
+			System.out.println("");
+			System.out.println("You sunk the Cruiser");
+			System.out.println("");
+			ships--;
 		}
 	}
 
@@ -163,6 +235,7 @@ public class Board
 	public int attack(int x, int y)
 	{
 		int f = 0;
+		int g = 0;
 		boolean check = false;
 
 		while(check == false)
@@ -177,6 +250,7 @@ public class Board
 		}
 
 		GridSpace buff = dis.get(x).get(y);
+		g = buff.getFlag();
 
 		if(buff.getFlag() == 0)
 		{
@@ -185,9 +259,36 @@ public class Board
 			dis.get(x).set(y, buff);
 			f = 0;
 		}else
-		if(buff.getFlag() > 0)
+		if(buff.getFlag() == 6)
 		{
-			System.out.println("Hit");
+			System.out.println("You cannot select these coordinates, please try again");
+			f = -1;
+		}else
+		if(buff.getFlag() > 0 && buff.getFlag() < 6)
+		{
+			System.out.println("Hit!");
+
+			switch (g)
+			{
+				case 1: 
+					checkSubmarine();
+					break;
+				case 2:
+					checkCarrier();
+					break;
+				case 3:
+					checkBattleship();
+					break;
+				case 4:
+					checkDestroyer();
+					break;
+				case 5:
+					checkCruiser();
+					break;
+				default:
+					break;
+			}
+
 			buff.setSpace();
 			dis.get(x).set(y, buff);
 			f = 1;
@@ -211,11 +312,6 @@ public class Board
 			dis2.get(row).set(col, buff);
 		}
 	}
-
-	/*public String check(int x, int y)
-	{
-
-	}*/
 
 	public void display2()
 	{

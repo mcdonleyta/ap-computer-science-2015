@@ -27,7 +27,7 @@ public class GridSpace
 				space = car.get_icon();
 				break;
 			case "Battleship":
-				flag = 1;
+				flag = 3;
 				Battleship bat = new Battleship();
 				space = bat.get_icon();
 				break;
@@ -58,10 +58,12 @@ public class GridSpace
 		if(getFlag() == 0)
 		{
 			space = 'O';
+			flag = 6;
 		}else
 		if(getFlag() > 0)
 		{
 			space = 'X';
+			flag = 6;
 		}
 	}
 
