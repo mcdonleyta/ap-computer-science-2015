@@ -1,2 +1,0 @@
-javac -d . -classpath .:KarelJRobot.jar Example01.java
-java -classpath .:KarelJRobot.jar kareltherobot.Example01

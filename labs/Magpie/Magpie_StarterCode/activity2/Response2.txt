@@ -1,0 +1,11 @@
+Response to question it wanted me to write in the code:
+
+What happens when more than one keyword appears?
+	The program picks the first one in the list of if statements
+	ex:
+		input = "bernie sanders is a communist"  //joking
+		output = "Feel the bern!"
+
+Actual questions:
+
+1. The program will respond with the response associated with the keyword, even though it is in a different word.  If I put in "Rome is my fatherland" it would reply with "Tell me more about your family."

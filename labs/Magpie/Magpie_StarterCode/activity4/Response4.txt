@@ -1,0 +1,3 @@
+Questiones:
+
+#1: It doesn't work well if there's multiple statements like "I love you and I want you to love me"
