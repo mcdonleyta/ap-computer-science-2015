@@ -1,0 +1,5 @@
+Activity 2:
+Depending on the precedent of the word in the if-else statement, the word may or may not be detected. If it's closer to the top of the if-else chain, then it will be detected first and overrule other keywords.
+
+Due to the String.trim() method, there is no way to differentiate true keywords and words inside of each other.
+
