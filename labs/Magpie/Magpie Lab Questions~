@@ -1,0 +1,5 @@
+1)
+When a keyword is included in another word, it displays the keyword's response anyway. This is a problem because oftentimes, these combined 
+words are not related, such as "cat" and "concatenate". This could be fixed by searching for the string with spaces around it.
+
+2)

@@ -1,0 +1,16 @@
+
+1)
+a)Hi,hello, whats up, whats your name, who are you, hows the weather, what are you
+b)cat -something about animals, food-something about eating, car-something about driving.
+
+
+2)
+When a keyword is included in another word, it displays the keyword's response anyway. This is a problem because oftentimes, these combined 
+words are not related, such as "cat" and "concatenate". This could be fixed by searching for the string with spaces around it.
+
+3)
+Some phrases: "I hate", "I cry", "I ate"
+
+4) 
+Some problems with this design are apparent when the user does not have a script. if the user says i want to want something or i really want something, the code won't work.
+
