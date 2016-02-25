@@ -11,7 +11,7 @@ public class Carrier extends Ship
 	{
 		print = 5;
 		health = 1;
-		icon = 'C';
+		icon = 'A';
 		name = "Carrier";
 	}
 

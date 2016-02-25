@@ -8,7 +8,7 @@ public class Board
 	private int ships = 5;
 	ArrayList < ArrayList <GridSpace> > dis = new ArrayList < ArrayList <GridSpace> > ();
 	ArrayList < ArrayList <GridSpace> > dis2 = new ArrayList < ArrayList <GridSpace> > ();
-	//Scanner scan = new Scanner();
+	Scanner scan = new Scanner(System.in);
 	int r, t;
 	String s;
 
@@ -46,6 +46,45 @@ public class Board
 		}
 	}
 
+	public void place_ships(String name)
+	{
+		/*System.out.println("Would you like to place the" + name + "horizontally or vertically (Input r for horizontal or c for column)");
+		s = scan.nextLine();
+
+		if(s.equals("r"))
+		{
+			System.out.println("Input a row");
+			r = scan.nextInt();
+			System.out.println("Input an intial column");
+			t = scan.nextInt();
+
+			for(int i = r; i < r + 1; r++)
+			{
+				for(int j = t; j < a.get_print() + t; j++)
+				{
+					dis.get(i).set(j, new GridSpace(a));
+				}
+			}
+		}else
+		if(s.equals("c"))
+		{
+			System.out.println("Input a column");
+			r = scan.nextInt();
+			System.out.println("Input an intial row");
+			t = scan.nextInt();
+
+			for(int i = r; i < r + 1; r++)
+			{
+				for(int j = t; j < a.get_print() + t; j++)
+				{
+					dis.get(i).set(j, new GridSpace(a));
+				}
+			}
+		}
+
+		display();*/
+	}
+
 	public void add_ships()
 	{
 		addSubmarine();
@@ -63,41 +102,9 @@ public class Board
 	public void addSubmarine()
 	{
 		Ship a = new Submarine();
-		numSub = a.get_print(); 
-
-		/*System.out.println("Would you like to place it as a row or column? (Input as r or c");
-		s = scan.nextLine();
-
-		if(s.equals("r"))
-		{
-			System.out.println("Input a row");
-			r = scan.nextInt();
-			for(int i = r; i < r +1; r++)
-			{
-				System.out.println("Input an intial column");
-				t = scan.nextInt();
-				for(int j = t; j < a.get_print() + t; j++)
-				{
-					dis.get(i).set(j, new GridSpace(a));
-				}
-			}
-		}else
-		if(s.equals("c"))
-		{
-			System.out.println("Input a column");
-			r = scan.nextInt();
-			for(int i = r; i < r +1; r++)
-			{
-				System.out.println("Input an intial row");
-				t = scan.nextInt();
-				for(int j = t; j < a.get_print() + t; j++)
-				{
-					dis.get(i).set(j, new GridSpace(a));
-				}
-			}
-		}*/
-
-		//display();
+		numSub = a.get_print();
+		String n = a.get_name();
+		//place_ships(n);
 
 		for(int i = 0;  i < 1; i++)
 		{
@@ -124,6 +131,9 @@ public class Board
 	{
 		Ship a = new Carrier();
 		numCar = a.get_print();
+		String n = a.get_name();
+		//place_ships(n);
+
 		for(int i = 1;  i < a.get_print() + 1; i++)
 		{
 			for(int j = 5; j < 6; j++)
@@ -149,6 +159,9 @@ public class Board
 	{
 		Ship a = new Battleship();
 		numBat = a.get_print();
+		String n = a.get_name();
+		//place_ships(n);
+
 		for(int i = 6;  i < 7; i++)
 		{
 			for(int j = 0; j < a.get_print(); j++)
@@ -174,6 +187,9 @@ public class Board
 	{
 		Ship a = new Destroyer();
 		numDes = a.get_print();
+		String n = a.get_name();
+		//place_ships(n);
+
 		for(int i = 9;  i < 10; i++)
 		{
 			for(int j = 3; j < a.get_print() + 3; j++)
@@ -199,6 +215,9 @@ public class Board
 	{
 		Ship a = new Cruiser();
 		numCru = a.get_print();
+		String n = a.get_name();
+		//place_ships(n);
+
 		for(int i = 7;  i < a.get_print() + 7; i++)
 		{
 			for(int j = 6; j < 7; j++)
