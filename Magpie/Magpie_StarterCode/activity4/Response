@@ -1,0 +1,4 @@
+When using an extended string that uses both of the required 
+keyowrds it will only recognize one and only respond to that 
+one keyword. This can be improved by adding more responses that
+respond to both inputs.
