@@ -1,0 +1,20 @@
+Activty #1:
+
+1. What's up?, How are you?, What's your name?
+
+2. Animal, or name of any animals: responds by complimenting the animal
+   Game, might play a game with the user, such as repeating the last phrase
+   Show, might say its favorite genre or state a movie
+
+
+Activity #2:
+
+1. When words, like motherboard or know, are used as a response or an input instead of a keyword, the output will be whatever the keyword included in the word is, as it only scans the string for that word, regardless on whether or not the word is by itself.
+
+Activity #3:
+
+1. Some other phrases to watch for include I hate, I love, I know, etc.
+
+Activty #4:
+
+1. If there are multiple you, me, or I in the sentence, which could break the sentence syntax. If you include, let's say, I hate and I love, in the same sentence, it would scan for the first phrase it found and include the other phrase in the output, which could break the sentence.
