@@ -4,7 +4,7 @@ import java.util.List;
 
 public class SortList
 {
-	List <Parable> myList = new ArrayList <Parable>();
+	List <Parable> myList = new ArrayList <Parable> ();
 
 	public void createList()
 	{
@@ -13,14 +13,12 @@ public class SortList
 
 	public void add(Parable p)
 	{
-		myList.add(p); //Mr. M: You should implement a sorted insertion here based on compareTo(...) from the Parable interface
-                               // The code has been discussed in class and was one of the answers to a previous written assignment. 
+		myList.add(p);
 	}
 
-	public void get(int index)
+	public Anime get(int index)
 	{
-		myList.get(index);
-
+		return (Anime) myList.get(index);
 	}
 
 	public int get_episode_count(int index)
@@ -30,18 +28,89 @@ public class SortList
 		return n;
 	}
 
-	public void pare()
+	public double get_rating(int index)
 	{
-		for(int j = 0; j < myList.size(); j++)
+		Anime name = (Anime) myList.get(index);
+		double n = name.get_rating();
+		return n; 
+	}
+
+	public void pare(int episode)
+	{
+		boolean check = false;
+		Anime one, two;
+		Anime temp;
+
+		for(int i = 0; i < size() - 1; i++)
 		{
-			Anime t2 = (Anime) myList.get(j);
-			for(int k = 1; k < myList.size() - 1; k++)
+			one = (Anime) myList.get(i);
+			two = (Anime) myList.get(i + 1);
+
+			if(one.get_episode_count() > two.get_episode_count())
 			{
-				Anime t1 = (Anime) myList.get(k);
-				if(t2.get_episode_count() > t1.get_episode_count())
+				temp = (Anime) one;
+				myList.set(i, two);
+				myList.set(i + 1, temp);
+
+				check = true;
+				if(check == true)
 				{
-					myList.add(k, myList.get(j));
-					myList.remove(j);
+					check = false;
+					i = 0;
+				}
+			}
+		}
+	}
+
+	public void pare(double rating)
+	{
+		boolean check = false;
+		Anime one, two;
+		Anime temp;
+
+		for(int i = 0; i < size() - 1; i++)
+		{
+			one = (Anime) myList.get(i);
+			two = (Anime) myList.get(i + 1);
+
+			if(one.get_rating() > two.get_rating())
+			{
+				temp = (Anime) one;
+				myList.set(i, two);
+				myList.set(i + 1, temp);
+
+				check = true;
+				if(check == true)
+				{
+					check = false;
+					i = 0;
+				}
+			}
+		}
+	}
+
+	public void pare(String name)
+	{
+		boolean check;
+		Anime one, two;
+		Anime temp;
+
+		for(int i = 0; i < size() - 1; i++)
+		{
+			one = (Anime) myList.get(i);
+			two = (Anime) myList.get(i + 1);
+
+			if(one.get_name().compareTo(two.get_name()) > 0)
+			{
+				temp = (Anime) one;
+				myList.set(i, two);
+				myList.set(i + 1, temp);
+
+				check = true;
+				if(check == true)
+				{
+					check = false;
+					i = 0;
 				}
 			}
 		}
