@@ -8,8 +8,15 @@ public class BrainFreakInterpret
 	boolean check = false;
 	public BrainFreakInterpret()
 	{
+		//Mr M: Your runtime error is because of this line
 		TapeMachine Tape = new TapeMachine();
+		
+		//Mr M: We are creating a new variable named "Tape" which is instantiated but then lost when we leave the constructor
+		//     this is due to the back that you have "TapeMachine Tape" which declares a new variable
 	}
+	
+	//Mr. M: Please complete the label functions to recieve the last 15points
+	
 	/*public void pushLabel(int headpos)
 	{
 		
