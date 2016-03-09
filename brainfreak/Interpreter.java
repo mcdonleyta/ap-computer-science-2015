@@ -2,6 +2,8 @@ package brainfreak;
 
 import java.util.*;
 
+//Mr M: Looks good. Add support for a single loop (no nested loops) to recieve the remaining 15 points.
+
 public class Interpreter {
 
 	List<Character> codes;
