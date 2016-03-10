@@ -1,0 +1,13 @@
+*Activity 3*
+1.	Deck has cards. Deck is composed of cards.
+2.	This deck has three cards.
+3.	Here:
+String[] suits = {“spades”,”hearts”,”diamonds”,”clubs”};
+String[] ranks = {“2”,”3”,”4”,”5”,”6”,”7”,”8”,”9”,”10”,“jack”,”queen”,”king”,”ace”};
+int[] pointValues = {2,3,4,5,6,7,8,9,10,10,10,10,11};
+4.	The order of the elements in pointValues and ranks matter, for they correspond with each other in parallel lists. However, the order of suits does not matter, for each rank and pointValue is recreated in each suit.
+
+*Activity 4*
+1-2.	These answers can be found in my Github branch under labs/labs/Elevens/activity3/Activity3QuestionMethods.java 
+3.	{1,3,0,1} is the shortest sequence of random numbers to achieve {4,3,2,1}
+
