@@ -1,0 +1,26 @@
+1.
+public static String flip() {
+	return (int)(Math.random() * 2) < 2;
+}
+
+2.
+public static Boolean arePermutations(int[] arr1, int[] arr2) {
+	Boolean ret;
+	Boolean p;
+	for(int i: arr1) {
+		for(inr j: arr2) {
+			if(i == j)
+				p = true;
+		}
+		if(p) {
+			ret = true;
+			p = false;
+		}
+		else
+			ret = false;
+	}
+	return ret;
+}
+
+3.
+3, 2, 1, 0

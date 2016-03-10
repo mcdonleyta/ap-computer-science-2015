@@ -4,26 +4,12 @@ import java.util.*;
 
 public class Interpreter {
 
-	List<Character> codes;
 	TapeMachine tapes;
 
-	public void decompose(String code) {
-		for(char x: code.toCharArray())
-			codes.add(x);
-	}
-
-	public void pushLabel(int headPos) {
-
-	}
-
-	public void popLabel() {
-	
-	}
-
-	public void run(String code) {
-		decompose(code);
-		for(char x: codes) {
-			switch(x) {
+	public int run(String _code) {
+		String code = _code;
+		for(int i = 0; i < code.length(); i++) {
+			switch(code.charAt(i)) {
 				case '>':
 					tapes.moveRight();
 					break;
@@ -37,14 +23,25 @@ public class Interpreter {
 					tapes.dec();
 					break;
 				case '.':
-					tapes.getValue();
+					System.out.println(tapes.getValue());
 					break;
+				case '[':
+					String ncode = code.substring(i + 1);
+					int ret = 0;
+					while(ret ==0)
+						ret = run(ncode);
+					code = code.substring(0, i - 1) + code.substring(ret);
+					break;
+				case ']':
+					if(tapes.getValue() == 0)
+						return i;
+					return 0;
 			}
 		}
+		return 0;
 	}
 
 	public Interpreter() {
-		codes = new ArrayList<Character>();
 		tapes = new TapeMachine();
 	}
 	

@@ -6,6 +6,6 @@ public interface TuringInterface {
 	abstract void moveRight();
 	abstract void inc();
 	abstract void dec();
-	abstract void getValue();
+	abstract int getValue();
 	
 }

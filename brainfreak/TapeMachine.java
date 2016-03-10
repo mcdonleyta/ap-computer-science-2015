@@ -13,7 +13,7 @@ public class TapeMachine implements TuringInterface {
 	}
 	public void inc() { tape.set(head, tape.get(head) + 1); }
 	public void dec() { tape.set(head, tape.get(head) - 1); }
-	public void getValue() { System.out.println(tape.get(head).intValue()); }
+	public int getValue() { return tape.get(head).intValue(); }
 
 	public TapeMachine() {
 		tape = new ArrayList<Integer>(0);
