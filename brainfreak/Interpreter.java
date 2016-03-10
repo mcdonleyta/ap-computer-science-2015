@@ -2,14 +2,13 @@ package brainfreak;
 
 import java.util.*;
 
-//Mr M: Looks good. Add support for a single loop (no nested loops) to recieve the remaining 15 points.
-
 public class Interpreter {
 
 	TapeMachine tapes;
 
-	public int run(String _code) {
+	public void run(String _code) {
 		String code = _code;
+		int marker = 0;
 		for(int i = 0; i < code.length(); i++) {
 			switch(code.charAt(i)) {
 				case '>':
@@ -28,19 +27,13 @@ public class Interpreter {
 					System.out.println(tapes.getValue());
 					break;
 				case '[':
-					String ncode = code.substring(i + 1);
-					int ret = 0;
-					while(ret ==0)
-						ret = run(ncode);
-					code = code.substring(0, i - 1) + code.substring(ret);
+					marker = i;
 					break;
 				case ']':
-					if(tapes.getValue() == 0)
-						return i;
-					return 0;
+					if(tapes.getValue() != 0)
+						run(code.substring(marker + 1, i - 1));
 			}
 		}
-		return 0;
 	}
 
 	public Interpreter() {
