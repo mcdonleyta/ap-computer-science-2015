@@ -31,13 +31,14 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		cards= new ArrayList<Card>();
-		for(int i = 0; i < ranks.length; i++){
-			cards.add(new Card(ranks[i],suits[i],values[i]));
+		cards= new ArrayList<>();
+		for(int i = 0; i<suits.length;i++) {
+			for(int j = 0; j<ranks.length;j++) {
+				cards.add(new Card(ranks[j],suits[i],values[j]));
+			}
 		}
-		size = cards.size();
+		this.size = cards.size();
 	}
-
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
