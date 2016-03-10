@@ -1,0 +1,24 @@
+1.
+public static String flip()
+{
+	int x = (int)(Math.random() * 4);
+	if(x == 1 || x == 2)
+	{
+		return "heads";
+	}
+	return "tails";
+}
+2.
+public static boolean arePermutations(int[] array1, int[] array2)
+{
+	for(int i = 0; i<array1.length; i++)
+	{
+		if(array1[i] != array2[i])
+		{
+			return false;
+			break;
+		}
+	}
+	return true;
+}
+3. 1,2,2,2

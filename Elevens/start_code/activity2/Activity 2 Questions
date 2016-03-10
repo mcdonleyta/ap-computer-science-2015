@@ -1,0 +1,6 @@
+1. A deck consists of a list of cards.
+2. 6
+3. String[] ranks = {"Ace","King","Queen","Jack","10","9","8","7","6","5","4","3","2","1"};
+String[] suits = {"Spades","Hearts","Diamonds","Clubs"};
+int[] pointValues = {11,10,9,8,7,6,5,4,3,2};
+4. Yes, if they are out of order values of the cards may get mixed up.
