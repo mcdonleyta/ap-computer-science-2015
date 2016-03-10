@@ -1,0 +1,60 @@
+Activity 1:
+
+No questions
+
+Activity 2:
+
+1. A deck has a composition made of cards. The deck object contains all the cards object.
+
+2. Six cards.
+
+3. rank = [Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King]
+   pointValue = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] or pointValue = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+   suit = [Heart, Spade, Club, Diamond]
+
+
+4. The order in the arrays for card rank and point values matter, while the order for the suits do not matter. Since the point value for the card is the same, or nearly the same, as the card rank, these values must have the same index for the card to have the correct value. The suit order does not matter, as the all values and name for the card will be assigned to the suit.
+
+Activity 3:
+
+1. 
+	public static void flip()
+	{
+		int random = (int) ((Math.random() * 4) + 1)
+		if(random != 2)
+		{
+			System.out.println("Heads");
+		}else
+		{
+			System.out.println("Tails");
+		}
+	}
+
+2. 
+	public static boolean arePermutations(int[] array1, int[] array2)
+	{
+		int length = array1.length;
+		int check;
+
+		for(int i = 0; i < array1.length; i++)
+		{
+			for(int j = 0; j < array2.length; j++)
+			{
+				if(array1[i] == array2[j])
+				{
+					check++;
+					break;
+				}
+			}
+		}
+
+		if(check == length)
+		{
+			return true;
+		}else
+		{
+			return false;
+		}
+	}
+
+3. Four sequences
