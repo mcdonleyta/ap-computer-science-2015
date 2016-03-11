@@ -6,4 +6,30 @@ Activity 2 Questions
    {11,10,10,10,10,9,8,7,6,5,4,3,2,1}
 4) Yes, because each element is aligned to its partner; you wouldn't have an ace with a value of 4.
 Activity 3 Questions
+1)
+public static String flip() {
+int rand =(int) Math.random()*101
+if( rand <33 || rand>66) {
+	return "heads";
+}
+else
+	return "tails";
 
+}
+2)
+public static boolean arePermutations(int[] x, int[] y) {
+int xSum=0;
+int ySum=0;
+for(int e:x) {
+xSum+=e;
+}
+for(int e:y) {
+ySum+=e;
+}
+if( xSum==ySum) 
+	return true;
+else
+	return false;
+
+}
+3) 3,2,1,0 just swaps them them from the end to the beginning
