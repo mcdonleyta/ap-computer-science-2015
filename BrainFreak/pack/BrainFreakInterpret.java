@@ -1,78 +1,74 @@
 package pack;
+import java.util.List;
 import java.util.ArrayList;
 
-public class BrainFreakInterpret implements TuringInterface
+public class BrainFreakInterpret 
 {
-	ArrayList <Character> chars = new ArrayList <Character> ();
-	ArrayList <Integer> t = new ArrayList <Integer> ();
+	//List <Character> chars = new ArrayList <Character>();
+	TapeMachine tape;
 
 	public void run(String code)
 	{
-		for(int i = 0; i < code.length; i++)
+		/*for(int i = 0; i < code.length(); i++)
 		{
 			chars.add(code.charAt(i));
+		}*/
+
+		System.out.println("Now interpretting the code...");
+		System.out.println();
+
+		for(int j = 0; j < chars.size(); j++)
+		{
+			if(chars.get(j) == '+')
+			{
+				System.out.println("Increment");
+				tape.increment();
+			}else
+			if(chars.get(j) == '-')
+			{
+				System.out.println("Decrement");
+				tape.decrement();
+			}else
+			if(chars.get(j) == '>')
+			{
+				System.out.println("Moved right");
+				tape.move_right();
+			}else
+			if(chars.get(j) == '<')
+			{
+				System.out.println("Moved left");
+				tape.move_left();
+			}else
+			if(chars.get(j) == '[')
+			{
+
+			}else
+			if(chars.get(j) == ']')
+			{
+
+			}else
+			if(chars.get(j) == '.')
+			{
+				System.out.println(tape.getValue());
+			}
 		}
-
-		
 	}
 
-	public BrainFreakInterpret()
+	public void print_characters()
 	{
-
+		for(int i = 0; i < chars.size(); i++)
+		{
+			System.out.println(chars.get(i));
+		}
 	}
 
-	public int getLength()
+	public int ssize()
 	{
 		return chars.size();
 	}
 
-	public void removePrevious()
+	public BrainFreakInterpret()
 	{
-		chars.remove(0);
-	}
-
-	public char getChars(int i)
-	{
-		return chars.get(i);
-	}
-
-	public void decrement()
-	{
-		//decreases the number at the index
-		t.set(x, t.get(x) - 1);
-	}
-	public void increment() 
-	{
-		//increases the number at the index
-		t.set(x, t.get(x) + 1);
-	}
-	public void move_right()
-	{
-		//goes to the next index
-		x++;
-	}
-	public void move_left()
-	{
-		//goes to the previous index
-		x--;
-	}
-	public int getValue()
-	{
-		return t.get(t.size() - 1);
-	}
-
-	public void print()
-	{
-		for(int j = 0; j < chars.size(); j++)
-		{
-			System.out.print(chars.get(j));
-		}
-
-		System.out.println("");
-	}
-
-	public void addTo(int a)
-	{
-		t.add(a);
+		tape = new TapeMachine();
 	}
 }
