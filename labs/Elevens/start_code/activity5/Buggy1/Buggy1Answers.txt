@@ -1,0 +1,3 @@
+In method testEmpty()
+
+The list is not empty when passed in, could fix by not calling this when we have already initialized the deck to be non-empty and then testing if it is empty

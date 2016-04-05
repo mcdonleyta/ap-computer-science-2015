@@ -1,0 +1,3 @@
+In method testShuffle()
+
+It initializes two identical decks and then tests is they are identical, this is bad, make the decks different

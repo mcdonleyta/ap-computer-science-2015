@@ -1,0 +1,3 @@
+In method testOneCard()
+
+Passes in a deck that has cards that are null, don't do this, initialize all of the cards
