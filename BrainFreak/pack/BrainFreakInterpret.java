@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class BrainFreakInterpret 
 {
-	//List <Character> chars = new ArrayList <Character>();
+	List <Character> chars = new ArrayList <Character>();
 	TapeMachine tape;
 
 	public void run(String code)
 	{
-		/*for(int i = 0; i < code.length(); i++)
+		for(int i = 0; i < code.length(); i++)
 		{
 			chars.add(code.charAt(i));
-		}*/
+		}
 
 		System.out.println("Now interpretting the code...");
 		System.out.println();
@@ -31,6 +31,7 @@ public class BrainFreakInterpret
 			}else
 			if(chars.get(j) == '>')
 			{
+				tape.setMultiple();
 				System.out.println("Moved right");
 				tape.move_right();
 			}else
@@ -41,11 +42,32 @@ public class BrainFreakInterpret
 			}else
 			if(chars.get(j) == '[')
 			{
-
+				System.out.println("Start Loop");
 			}else
 			if(chars.get(j) == ']')
 			{
+				if(tape.getMultiple() == 0)
+				{
+					for(int i = 0; i < chars.size(); i++)
+					{
+						if(chars.get(i) == '.')
+						{
+							j = i - 2;
+						}
+					}
 
+					System.out.println("End Loop");
+				}else
+				{
+					for(int i = 0; i < chars.size(); i++)
+					{
+						if(chars.get(i) == '[')
+						{
+							j = i - 1;
+						}
+					}
+					System.out.println("End Loop");
+				}
 			}else
 			if(chars.get(j) == '.')
 			{
@@ -60,6 +82,11 @@ public class BrainFreakInterpret
 		{
 			System.out.println(chars.get(i));
 		}
+	}
+
+	public void check()
+	{
+		tape.checkZeroes();
 	}
 
 	public int ssize()

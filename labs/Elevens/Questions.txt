@@ -62,3 +62,42 @@ Activity 3:
 Activity 4:
 
 No questions
+
+Activity 5:
+
+No questions
+
+Activity 6:
+
+1. 5/6
+
+2. No, as the last three cards dealt from the deck can either be a pair of elevens or no pair at all. There is a probablity that the last three cards dealt can be the three face cards.
+
+3. No, as the deck is randomly shuffled and the top card of the deck is taken to replace the pair. Having more than one play does allow the player the chance to obtain more cards on the board, making more pairs and depleting the deck. 
+
+Activity 7:
+
+1. size of the board, card rank (such as ace, two, three, etc.), card suit, card value (1, 2, 3, etc.)
+
+2. a. create game. deal nine cards to the visible board for player
+   b. Looks for a set of two cards that sum to eleven
+   c. Looks for a set of face cards, jack, queen, king
+   d. after a pair is made, deal cards from deck. Check to see if a pair can be made. If not, then the game is lost
+   e. repeat steps b-d until there are no cards left in the deck
+   f. game is won
+
+3. Yes, it does. 
+
+4. a. dealMyCards is called in newGame() method and in the constructor when a new board is created.
+
+   b. isLegal(), anotherPlayIsPossible()
+
+   c. 0, 1, 4, 6, 7
+
+   d. for(int i = 0; i < cIndexes.size(); i++)
+   	  {
+   	  	 System.out.println(board.cards[i].toString());
+   	  }
+
+   e. isLegal(), this is to check if the two cards selected, unless it is a triple face card, will have a sum of eleven and that cards need to be dealt from the deck.
+
