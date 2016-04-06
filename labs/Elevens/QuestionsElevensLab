@@ -52,7 +52,7 @@ deal()
 checkWon()
 }
 
-3) Yes
+3) No, because there is no getMove and player interfaces
 4)
 	a) when creating a new game and in the constructor
 	b) isLegal and anotherPlayIsPossible
