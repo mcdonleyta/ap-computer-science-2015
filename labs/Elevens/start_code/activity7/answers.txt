@@ -1,0 +1,24 @@
+1.
+To play elevens you need a shuffled deck.
+
+2.
+Draw BOARD_SIZE cards and output them
+Wait for match, check match, remove cards and draw two more
+Do this until win
+
+3.
+No, it doesn't even compile
+
+4.
+a)
+The constructor and the method to start a new game
+b)
+isLegal() & anotherPlayIsPossible()
+c)
+Same but with null removed
+d)
+for(int i: cIndexes) {
+	system.out.println(card[i].toString());
+}
+e)
+anotherPlayIsPossible()
