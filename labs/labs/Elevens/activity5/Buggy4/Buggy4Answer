@@ -1,0 +1,1 @@
+In DeckTester.testOneCard(), the only card on the 1-card deck is null; therefore, it's really an empty deck.

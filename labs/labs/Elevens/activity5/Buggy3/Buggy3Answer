@@ -1,0 +1,1 @@
+In DeckTester.testShuffle(), the newly-shuffled deck is identical to the deck before it was shuffled. Therefore, it is assumed that the deck hasn't actually been shuffled.
