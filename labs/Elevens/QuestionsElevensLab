@@ -33,3 +33,29 @@ else
 
 }
 3) 3,2,1,0 just swaps them them from the end to the beginning
+
+Activity 7 Questions:
+1) a deck of 52 cards, with ranks A (ace), 2, 3, 4, 5, 6, 7, 8, 9, 10, J (jack),
+Q (queen), and K (king), and suits ♣ (clubs), ♦ (diamonds), ♥ (hearts), and ♠ (spades).
+
+2)
+builddeck()
+shuffledeck()
+dealcards()
+while(!deck.empty() && !cardsOnTable.empty()) {
+getMove()
+checkMoveCondition()
+move()
+if(moveReducesCards) {
+deal()
+}
+checkWon()
+}
+
+3) Yes
+4)
+	a) when creating a new game and in the constructor
+	b) isLegal and anotherPlayIsPossible
+	c) j♥ 6♣ 2♠ A♠ 4♥
+	d) I put it in the code.
+	e)  anotherPlayIsPossible because the cards get removed before it is called, leaving null.
