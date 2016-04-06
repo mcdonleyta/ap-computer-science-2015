@@ -1,0 +1,3 @@
+Method testShuffle
+The sequence of cards in both decks are identical therefore the assert throws
+a false variable.
