@@ -1,0 +1,21 @@
+1. You would need a private variable of the board size, the ranks,the suits,
+point values, cards, and a deck.
+
+2. You would need to first deal the first set of cards. Then take in the user
+input and check if it is valid. Then depending on the cards chosen deal back
+2 or 3 cards. Then repeat. 
+
+3. It looks complete, it has the checks to see if moves are possible which is
+something I forgot to mention on the answer above. Besides that the class has a
+method for every step I said above.
+
+4. a. line 59, or after the deck is created and the game is created.
+b. One is anotherPlayIsPossible() and isLegal() to check if there even is a pair
+c. 0 = J♥ 1 = 6♣ 2 = 2♠ 3 = A♠ 4 = 4♥
+d.
+for(Card i, cIndexes)
+{
+	System.out.println(i);
+}
+e. isLegal() because it requires a List of cards which most likely cannot have
+a null inside of it for the function to work.
