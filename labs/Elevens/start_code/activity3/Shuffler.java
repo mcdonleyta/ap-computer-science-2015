@@ -7,7 +7,8 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;	
+	private static final int SHUFFLE_COUNT = 1;
+
 
 	/**
 	 * Tests shuffling methods.
@@ -18,7 +19,7 @@ public class Shuffler {
 								 " consecutive perfect shuffles:");
 		int[] values1 = {0, 1, 2, 3};
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			values1 = perfectShuffle(values1);
+			perfectShuffle(values1);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values1[k]);
@@ -31,7 +32,7 @@ public class Shuffler {
 								 " consecutive efficient selection shuffles:");
 		int[] values2 = {0, 1, 2, 3};
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			values2 = selectionShuffle(values2);
+			selectionShuffle(values2);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
 				System.out.print(" " + values2[k]);
@@ -48,19 +49,8 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static int[] perfectShuffle(int[] values) {
-		int[] shuffled = new int[4];
-		int k = 0;
-		for(int j = 0; j < 2; j++) {
-			shuffled[k] = values[j];
-			k += 2;
-		}
-		k = 1;
-		for(int j = 2; j < 4; j++) {
-			shuffled[k] = values[j];
-			k += 2;
-		}
-		return shuffled;
+	public static void perfectShuffle(int[] values) {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 	}
 
 	/**
@@ -74,21 +64,7 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static int[] selectionShuffle(int[] values) {
-		int[] shuffled = new int[4];
-		int j = 0;
-		Boolean done = false;
-		for(int k = 0; k < 4; k++) {
-			while(!done) {
-				j = (int)(Math.random() * 4.0);
-				if(values[j] != -1) {
-					shuffled[k] = values[j];
-					values[j] = -1;
-					done = true;
-				}
-			}
-			done = false;
-		}
-		return shuffled;	
+	public static void selectionShuffle(int[] values) {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 	}
 }

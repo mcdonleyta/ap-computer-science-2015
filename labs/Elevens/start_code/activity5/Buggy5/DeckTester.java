@@ -9,8 +9,8 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		test2CardDeck();
 		test1CardDeck();
+		test2CardDeck();
 		testShuffle();
 		System.out.println("All tests passed!");
 	}
@@ -29,6 +29,7 @@ public class DeckTester {
 
 		d.shuffle();
 		testOneCard(d, new Card("ace", "spades", 1));
+		testEmpty(d);
 	}
 
 	/**
@@ -92,7 +93,12 @@ public class DeckTester {
 	 * @param d is a deck that should be empty.
 	 */
 	private static void testEmpty(Deck d) {
-		assert d.size() > 0: "d is empty, should not be";
+		assert d.size() == 0 :  "Size for an empty deck is " + d.size()
+			+ ". It should be 0.";
+		assert d.isEmpty() : "isEmpty is false for an empty deck.";
+		Card c = d.deal();
+		assert c == null : "Dealt card is " + c
+			+ ". It should be null for an empty deck.";
 	}
 
 	/**

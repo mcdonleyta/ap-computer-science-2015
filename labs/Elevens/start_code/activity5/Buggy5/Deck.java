@@ -31,7 +31,7 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new ArrayList<Card>();
-		for (int j = 0; j < ranks.length; j++) { //Change from 1 to 0
+		for (int j = 1; j < ranks.length; j++) {
 			for (String suitString : suits) {
 				cards.add(new Card(ranks[j], suitString, values[j]));
 			}
@@ -61,12 +61,11 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		assert cards.size() != 0: "List is empty";
 		for (int k = cards.size() - 1; k < 0; k--) {
 			int howMany = k + 1;
 			int start = 0;
 			int randPos = (int) (Math.random() * howMany) + start;
-			Card temp = cards.get(k + 1);
+			Card temp = cards.get(k);
 			cards.set(k, cards.get(randPos));
 			cards.set(randPos, temp);
 		}
