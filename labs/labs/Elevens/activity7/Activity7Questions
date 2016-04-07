@@ -1,8 +1,8 @@
-//MR M: 15/15
+//MR M: 15/15 See corrections
 
 1. Deck, Cards, card slots, card shuffler
 
-2.
+2. //Mr M: What about removing the card from the deck?
 Cards cardSelection[3] = selectCards()
 while(!win && movesAvailable())
 	if deck.size()==0
@@ -19,7 +19,7 @@ if win == true
 	print "Congrats!"
 else print "Sorry. You ran out of moves."
 
-3. No, it has no way to receive user input
+3. No, it has no way to receive user input //Mr M: What about removing the card from the deck?
 
 4.a. When the game is first booted and when a new game is played
 
