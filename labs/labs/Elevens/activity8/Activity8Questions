@@ -1,0 +1,3 @@
+1. Each one of them uses a different number of card slots, range of cards used, and have different "winning sets" (sets that are matched together to be eliminated). However, each have these values, although they're different. They each have the same mechanics (removing cards that fit together until the entire deck is removed).
+2. The Board instance variables are initialized by calling super(size, ranks, suits, pointValues); within the ElevensBoard constructor. This calls the Board class's overloaded constructor, initializing the variables for ElevensBoard.
+3. No, once the methods in ElevensBoard are implemented, they will not cover all of the differences between these three games. They will be specifically designed for Elevens.
