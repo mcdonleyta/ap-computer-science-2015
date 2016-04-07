@@ -47,7 +47,7 @@ getMove()
 checkMoveCondition()
 move()
 if(moveReducesCards) {
-deal() //Mr. M: We probably also need to remove used cards from the deck
+deal() 
 }
 checkWon()
 }
