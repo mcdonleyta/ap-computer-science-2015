@@ -75,7 +75,7 @@ Activity 6:
 
 3. No, as the deck is randomly shuffled and the top card of the deck is taken to replace the pair. Having more than one play does allow the player the chance to obtain more cards on the board, making more pairs and depleting the deck. 
 
-Activity 7:
+Activity 7: Mr. M: 15/15
 
 1. size of the board, card rank (such as ace, two, three, etc.), card suit, card value (1, 2, 3, etc.)
 
@@ -86,7 +86,7 @@ Activity 7:
    e. repeat steps b-d until there are no cards left in the deck
    f. game is won
 
-3. Yes, it does. 
+3. Yes, it does. //Mr. M: What about user input?
 
 4. a. dealMyCards is called in newGame() method and in the constructor when a new board is created.
 
