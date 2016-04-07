@@ -68,6 +68,6 @@ are said to be 1/2. In 10s, there is a 13 card board where pairs that add up to 
 2) The Board instance variables are initialized by calling super(args) in the constructor of the subclass. This method calls the constructor of the superclass in the subclass.
 
 3) Abstract Methods: isLegal, anotherPlayISPossible
-Yes, these methods do cover the diffrences because they specifically address the diffrences in rules between the games.
+Yes, these methods do cover the diffrences because they specifically address the diffrences in rules between the games. This method won't work for the other games; you would need to create a new method.
 
 
