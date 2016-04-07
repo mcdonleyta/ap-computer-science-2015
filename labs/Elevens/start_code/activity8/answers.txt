@@ -1,0 +1,8 @@
+1.
+They both use a board with the same set of cards, however they use different
+rules and board sizes.
+2.
+The ElvensBoard class can access all of the values from Board because
+they are public.
+3.
+It will only work for elevens.
