@@ -1,3 +1,5 @@
+//Mr M: 15/15
+
 1.
 To play elevens you need a shuffled deck.
 
@@ -7,7 +9,7 @@ Wait for match, check match, remove cards and draw two more
 Do this until win
 
 3.
-No, it doesn't even compile
+No, it doesn't even compile //Mr. M: There isn't a way to remove cards from the deck
 
 4.
 a)
@@ -15,7 +17,7 @@ The constructor and the method to start a new game
 b)
 isLegal() & anotherPlayIsPossible()
 c)
-Same but with null removed
+Same but with null removed //Mr. M: 0 1 3 6 7
 d)
 for(int i: cIndexes) {
 	system.out.println(card[i].toString());
