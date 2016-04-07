@@ -9,7 +9,7 @@ input and check if it is valid. Then depending on the cards chosen deal back
 
 3. It looks complete, it has the checks to see if moves are possible which is
 something I forgot to mention on the answer above. Besides that the class has a
-method for every step I said above. //Mr. M: What about removing the card from the deck?
+method for every step I said above. //Mr. M: What about user input for selecting cards
 
 4. a. line 59, or after the deck is created and the game is created.
 b. One is anotherPlayIsPossible() and isLegal() to check if there even is a pair
