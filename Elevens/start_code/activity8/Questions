@@ -1,0 +1,12 @@
+1. Elevens requires players to either pair two card together to get an 11 or
+to pair together a king, queen, and jack. Thirteens requires that two cards
+be paired to form a 13. Kings can be pulled out automatically. In Tens two cards
+must be paired to form a 10. You can also have a 4 of a kind that can be pulled out.
+
+2. The exact mechanism is the calling of the constructor in the abstract board
+class which can be called by super() in the subclass. Therefore the paramaters
+are passed on to the abstract board.
+
+3. They would incorporate the rules that were described above. However the code
+has not yet been implemented, so therfore there is no difference. The only code
+we have is for the ElevensBoard, so Elevens will be the only code that can work
