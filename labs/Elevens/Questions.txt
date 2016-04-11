@@ -120,7 +120,6 @@ Activity 9:
 Activity 10:
 
 No questions
-<<<<<<< HEAD
 
 Activity 11:
 
@@ -129,5 +128,4 @@ Activity 11:
 2. 
 
 3. 
-=======
->>>>>>> 4ae624ac9b4407e37c6a3d414130e36c52d8f1a9
+
