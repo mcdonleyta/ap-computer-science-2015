@@ -1,0 +1,15 @@
+Buggy1: Error:  isEmpty is false for an empty deck. at DeckTester.testEmpty(DeckTester.java:98)
+
+The deck should be empty when it is probably not, throwing an error. 
+
+Buggy2: Size is 0. It should be 1 for a 1-card deck at DeckTester.testOneCard(DeckTester.java:111)
+
+The deck is empty at this point, when the error was thrown, when it should be one. 
+
+Buggy3: The sequence of cards in d1 and d2 are identical at DeckTester.testShuffle
+
+The decks, even after being shuffled, are the same, throwing an error. Could be coincedence or the decks are in the same exact order and use the same exact shuffle method, causing the shuffled decks being identical
+
+Buggy4: 1st dealt card is null for a 1-card deck at DeckTester.testOneCard(DeckTester.java:114)
+
+The deck was not probably not initialized properly. Another possibility could be that the card object was not created properly, causing null to appear as the card. 
