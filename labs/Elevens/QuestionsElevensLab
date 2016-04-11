@@ -70,4 +70,6 @@ are said to be 1/2. In 10s, there is a 13 card board where pairs that add up to 
 3) Abstract Methods: isLegal, anotherPlayISPossible
 Yes, these methods do cover the diffrences because they specifically address the diffrences in rules between the games. This method won't work for the other games; you would need to create a new method.
 
-
+Activity 9 Questions:
+1) Because there are diffrences in the board size between elevens and thirteens; there is no has-a or is-a relationship between their sizes.
+2)
