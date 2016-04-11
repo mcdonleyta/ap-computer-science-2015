@@ -1,0 +1,9 @@
+1.
+Because size is dependent on the type of board being made.
+
+2.
+It's dependent on the game.
+
+3.
+It would not work as well because you would need to implement all of the methods, instead of some of them being implemented in Board.
+
