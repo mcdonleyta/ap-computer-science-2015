@@ -1,6 +1,9 @@
 import java.util.List;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.*;
+=======
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -31,6 +34,7 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
+<<<<<<< HEAD
 		cards= new ArrayList<>();
 		for(int i = 0; i<suits.length;i++) {
 			for(int j = 0; j<ranks.length;j++) {
@@ -40,12 +44,22 @@ public class Deck {
 		this.size = cards.size();
 	}
 
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+	}
+
+
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	/**
 	 * Determines if this deck is empty (no undealt cards).
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
+<<<<<<< HEAD
 		return size == 0;
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**
@@ -53,7 +67,11 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
+<<<<<<< HEAD
 		return this.size;
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**
@@ -61,6 +79,7 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
+<<<<<<< HEAD
 
 		for(int i = 0 ; i <100; i++) {
 			int randIndex = ((int)(Math.random() * cards.size()));
@@ -68,6 +87,9 @@ public class Deck {
 			cards.set(randIndex,cards.get(randElement));
 		}
 		size = cards.size();
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**
@@ -76,6 +98,7 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
+<<<<<<< HEAD
 		if(this.size() <= 0) {
 			return null;
 		}
@@ -86,6 +109,9 @@ public class Deck {
 			
 		}
 		
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**

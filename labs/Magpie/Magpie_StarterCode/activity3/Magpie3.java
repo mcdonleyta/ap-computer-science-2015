@@ -38,6 +38,7 @@ public class Magpie3
 		{
 			response = "Why so negative?";
 		}
+<<<<<<< HEAD
 		else if (findKeyword(statement, "mother") >= 0 || findKeyword(statement, "father") >= 0 || findKeyword(statement, "sister") >= 0 || findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
@@ -48,6 +49,15 @@ public class Magpie3
 		else if (findKeyword(statement, "Mr.M",0) >= 0 ) {
 			response = "He must be a good teacher!";
 		}
+=======
+		else if (findKeyword(statement, "mother") >= 0
+				|| findKeyword(statement, "father") >= 0
+				|| findKeyword(statement, "sister") >= 0
+				|| findKeyword(statement, "brother") >= 0)
+		{
+			response = "Tell me more about your family.";
+		}
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 		else
 		{
 			response = getRandomResponse();
@@ -71,7 +81,12 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
+<<<<<<< HEAD
 	private int findKeyword(String statement, String goal,int startPos)
+=======
+	private int findKeyword(String statement, String goal,
+			int startPos)
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	{
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();
@@ -84,13 +99,17 @@ public class Magpie3
 		// word
 		while (psn >= 0)
 		{
+<<<<<<< HEAD
 			System.out.println(psn);
+=======
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 			// Find the string of length 1 before and after
 			// the word
 			String before = " ", after = " ";
 			if (psn > 0)
 			{
 				before = phrase.substring(psn - 1, psn);
+<<<<<<< HEAD
 				
 			}
 			if (psn + goal.length() < phrase.length())
@@ -100,6 +119,18 @@ public class Magpie3
 
 			// If before and after aren't letters, we've
 			// found the word			
+=======
+			}
+			if (psn + goal.length() < phrase.length())
+			{
+				after = phrase.substring(
+						psn + goal.length(),
+						psn + goal.length() + 1);
+			}
+
+			// If before and after aren't letters, we've
+			// found the word
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 			if (((before.compareTo("a") < 0) || (before
 					.compareTo("z") > 0)) // before is not a
 											// letter

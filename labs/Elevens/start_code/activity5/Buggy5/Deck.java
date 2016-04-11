@@ -45,7 +45,11 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
+<<<<<<< HEAD
 		return size <= 0;
+=======
+		return size < 0;
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**
@@ -61,7 +65,11 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
+<<<<<<< HEAD
 		for (int k = cards.size() - 1; k >= 0; k--) {
+=======
+		for (int k = cards.size() - 1; k < 0; k--) {
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 			int howMany = k + 1;
 			int start = 0;
 			int randPos = (int) (Math.random() * howMany) + start;
@@ -78,11 +86,19 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
+<<<<<<< HEAD
 		if (isEmpty()) {
 			return null;
 		}
 		Card c = cards.get(size-1);
 		size--;
+=======
+		size--;
+		if (isEmpty()) {
+			return null;
+		}
+		Card c = cards.get(size);
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 		return c;
 	}
 

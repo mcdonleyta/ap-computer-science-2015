@@ -27,4 +27,7 @@ public class MagpieRunner4
 	}
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba

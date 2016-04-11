@@ -8,9 +8,15 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		String[] ranks =  {"ace","king","queen","jack","10","9","8","7","6","5","4","3","2"};//{"jack", "queen", "king"};
 		String[] suits =  {"spades","hearts","diamonds","clubs"};//{"blue", "red"};
 		int[] pointValues = {11,10,10,10,10,9,8,7,6,5,4,3,2,1};//{11, 12, 13};
+=======
+		String[] ranks = {"jack", "queen", "king"};
+		String[] suits = {"blue", "red"};
+		int[] pointValues = {11, 12, 13};
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 		Deck d = new Deck(ranks, suits, pointValues);
 
 		System.out.println("**** Original Deck Methods ****");
@@ -50,10 +56,15 @@ public class DeckTester {
 		System.out.println("  deal: " + d.deal());
 		System.out.println();
 		System.out.println();
+<<<<<<< HEAD
 		
 		d.shuffle();
 		System.out.println("This is d" + d);
 		d.shuffle();
 		System.out.println("This is d shuffled" + d);
+=======
+
+		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 }

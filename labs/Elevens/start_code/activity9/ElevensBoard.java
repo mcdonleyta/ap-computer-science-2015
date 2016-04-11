@@ -53,8 +53,14 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
+<<<<<<< HEAD
 		return deck.containsPairSum11(selectedCards) || (deck.containsJQK(selectedCards));
 		}
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+	}
+
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	/**
 	 * Determine if there are any legal plays left on the board.
 	 * In Elevens, there is a legal play if the board contains
@@ -65,6 +71,7 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
+<<<<<<< HEAD
 		for(int i = 0; i<deckSize; i++) {
 			for(int j = 0; j<deckSize;j++) {
 				if(containsPairSum11(cardAt(i),cardAt(j)))
@@ -78,6 +85,9 @@ public class ElevensBoard extends Board {
 			}
 		}
 		return false;
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**
@@ -89,6 +99,7 @@ public class ElevensBoard extends Board {
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
+<<<<<<< HEAD
 		int sum;
 		if(selectedCards.size() != 2) {
 			return false;
@@ -103,6 +114,10 @@ public class ElevensBoard extends Board {
 			return true;
 		}
 		return false;
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+	}
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 
 	/**
 	 * Check for a JQK in the selected cards.
@@ -113,6 +128,7 @@ public class ElevensBoard extends Board {
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
+<<<<<<< HEAD
 		int sum;
 		if(selectedCards.size() ! 3)
 			return false;
@@ -125,5 +141,8 @@ public class ElevensBoard extends Board {
 		if(sum == 0) {
 			return true;
 		}
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 }

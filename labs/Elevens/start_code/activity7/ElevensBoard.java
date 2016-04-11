@@ -173,6 +173,7 @@ public class ElevensBoard {
 		}
 		return false;
 	}
+<<<<<<< HEAD
 	public static printCards(ElevensBoard board) {
 		List<Integer> cIndexes = board.cardIndexes();
 		for(Integer e:cardIndexes) {
@@ -182,6 +183,9 @@ public class ElevensBoard {
 	
 	
 	
+=======
+
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	/**
 	 * Determines if the selected cards form a valid group for removal.
 	 * In Elevens, the legal groups are (1) a pair of non-face cards

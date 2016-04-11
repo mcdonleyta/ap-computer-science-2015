@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import java.util.*;
+=======
+import java.util.List;
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 import java.util.ArrayList;
 
 /**
@@ -61,6 +65,7 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
+<<<<<<< HEAD
 	public void shuffle() { 
 		for(int i = cards.size()-1; i>=1;i--) {
 			int rand = (int)(Math.random() * cards.size());
@@ -69,6 +74,10 @@ public class Deck {
 			cards.set(rand,tmp);
 			size = cards.size();
 		}
+=======
+	public void shuffle() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 
 	/**

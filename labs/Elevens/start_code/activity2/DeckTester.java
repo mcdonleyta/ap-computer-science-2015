@@ -8,6 +8,7 @@ public class DeckTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
+<<<<<<< HEAD
 		int[] values = {11,10,10,10,10,9,8,7,6,5,4,3,2,1};
 		String[] suits = {"spades","hearts","diamonds","clubs"};
 		String[] ranks = {"ace","king","queen","jack","10","9","8","7","6","5","4","3","2","1"};
@@ -19,5 +20,8 @@ public class DeckTester {
 		System.out.println(workPls);
 		System.out.println("I deal a " + workPls.deal());
 		System.out.println("Now the size is " + workPls.size());
+=======
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	}
 }

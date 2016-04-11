@@ -10,7 +10,10 @@
  * @version April 2012
  *
  */
+<<<<<<< HEAD
 
+=======
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 public class Magpie4
 {
 	/**
@@ -50,6 +53,7 @@ public class Magpie4
 		}
 
 		// Responses which require transformations
+<<<<<<< HEAD
 
 		else if (findKeyword(statement, "I want to",0) >=0) {
 			response = transformIWantToStatement(statement);
@@ -68,26 +72,43 @@ public class Magpie4
 			response = getRandomResponse();
 		
 		/*
+=======
+		else if (findKeyword(statement, "I want to", 0) >= 0)
+		{
+			response = transformIWantToStatement(statement);
+		}
+
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 		else
 		{
 			// Look for a two word (you <something> me)
 			// pattern
 			int psn = findKeyword(statement, "you", 0);
 
+<<<<<<< HEAD
 			if (psn >= 0)
 			{
 				response = transformYouStatement(statement);
 			}
 			if (psn >= 0 && findKeyword(statement,"me",0) >=0) {
+=======
+			if (psn >= 0
+					&& findKeyword(statement, "me", psn) >= 0)
+			{
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 				response = transformYouMeStatement(statement);
 			}
 			else
 			{
 				response = getRandomResponse();
 			}
+<<<<<<< HEAD
 
 		}
 		*/
+=======
+		}
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 		return response;
 	}
 	
@@ -97,6 +118,7 @@ public class Magpie4
 	 * @param statement the user statement, assumed to contain "I want to"
 	 * @return the transformed statement
 	 */
+<<<<<<< HEAD
 	private String transformIWantStatement(String statement)
 	{
 		//  Remove the final period, if there is one
@@ -118,6 +140,8 @@ public class Magpie4
 		}
 		return ret;
 	}
+=======
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	private String transformIWantToStatement(String statement)
 	{
 		//  Remove the final period, if there is one
@@ -142,6 +166,7 @@ public class Magpie4
 	 * @param statement the user statement, assumed to contain "you" followed by "me"
 	 * @return the transformed statement
 	 */
+<<<<<<< HEAD
 	private String transformYouStatement(String statement)
 	{
 		//  Remove the final period, if there is one
@@ -159,6 +184,8 @@ public class Magpie4
 		
 		return "Why do you  " +remaining+ " me?";
 	}
+=======
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	private String transformYouMeStatement(String statement)
 	{
 		//  Remove the final period, if there is one
@@ -178,6 +205,10 @@ public class Magpie4
 		return "What makes you think that I " + restOfStatement + " you?";
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 
 	
 	

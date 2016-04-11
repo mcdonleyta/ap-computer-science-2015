@@ -284,7 +284,11 @@ public class Magpie5
 	private String [] randomResponses = {"Interesting, tell me more",
 			"Hmmm.",
 			"Do you really think so?",
+<<<<<<< HEAD
 			"You don't say.","cool story bro", "that's nice","sweet!", "ok, great"
+=======
+			"You don't say."
+>>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 	};
 	
 }
