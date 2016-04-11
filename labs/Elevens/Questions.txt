@@ -107,12 +107,24 @@ Activity 8:
 
 2. The subclass, ElevensBoard, passes these values to the parent class, Board, by calling the constructor of the parent class and passing the values through the constructor to then set the variables in the parent class. 
 
-3. Yes, the abstract Board class can be implemented by all three games, as all three games use same methods, such as isLegal() just checks to make sure the pair can be made and anotherPlayIsPossible() checks for another pair on the board, though the methods need to be rewritten to accomodate the rules of the game. While the ElevensBoard has another function, containsJQK(), it is only accessed by this class.
+3. Yes, the abstract Board class can be implemented by all three games, as all three games use same methods, such as isLegal(),just checks to make sure the pair can be made and anotherPlayIsPossible(), which checks for another pair on the board, though the methods need to be rewritten to accomodate the rules of the game. While the ElevensBoard has another function, containsJQK(), it is only accessed by this class.
 
 Activity 9:
 
-1. 
+1. The size of the board is stored in the subclass and is passed into the superclass. This allows the size() method to not be abstract, as it still prints out a board of nine cards.
+
+2. The methods for dealing and removing the cards will behave the same in both games. Because of this, the methods do not need to be declared as abstract.
+
+3. This alternate design could work. The methods, isLegal() and anotherPlayIsPossible(), will still be called polymorphically. However, all other non-abstract methods in the Board() class will need to be defined seperately in both classes. 
 
 Activity 10:
 
 No questions
+
+Activity 11:
+
+1. 
+
+2. 
+
+3. 
