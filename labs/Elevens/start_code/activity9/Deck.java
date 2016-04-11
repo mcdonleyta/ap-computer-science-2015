@@ -86,12 +86,10 @@ public class Deck {
 		Card c = cards.get(size);
 		return c;
 	}
-<<<<<<< HEAD
+
 	public Card get(int index) {
 		return cards.get(index);
 	}
-=======
->>>>>>> 373aa96cdb39d0c13a722815cbab04a0be093eba
 
 	/**
 	 * Generates and returns a string representation of this deck.
