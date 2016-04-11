@@ -34,7 +34,7 @@ else
 }
 3) 3,2,1,0 just swaps them them from the end to the beginning
 
-Activity 7 Questions:
+Activity 7 Questions: //Mr. M: 15/15
 1) a deck of 52 cards, with ranks A (ace), 2, 3, 4, 5, 6, 7, 8, 9, 10, J (jack),
 Q (queen), and K (king), and suits ♣ (clubs), ♦ (diamonds), ♥ (hearts), and ♠ (spades).
 
@@ -47,12 +47,12 @@ getMove()
 checkMoveCondition()
 move()
 if(moveReducesCards) {
-deal()
+deal() 
 }
 checkWon()
 }
 
-3) No, because there is no getMove and player interfaces
+3) No, because there is no getMove and player interfaces  //MR. M: Also removin  cards from the deck
 4)
 	a) when creating a new game and in the constructor
 	b) isLegal and anotherPlayIsPossible
