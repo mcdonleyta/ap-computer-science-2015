@@ -74,7 +74,7 @@ public class ElevensBoard extends Board {
 		ArrayList<Integer> selectedCards = new ArrayList<Integer>();
 		for(int i = 0; i<BOARD_SIZE; i++) {
 			for(int j = 0; j<BOARD_SIZE;j++) {
-				selectedCards.clear();
+				selectedCards.clear(); //terrible solution but it works
 				selectedCards.add(i);
 				selectedCards.add(j);
 				if(containsPairSum11(selectedCards))
@@ -85,7 +85,7 @@ public class ElevensBoard extends Board {
 		for(int k = 0; k<BOARD_SIZE; k++) {
 			for(int l = 0; l<BOARD_SIZE; l++) {
 				for(int m = 0; m<BOARD_SIZE;m++) {
-					selectedCardsTwo.clear();
+					selectedCardsTwo.clear(); 
 					selectedCardsTwo.add(k);
 					selectedCardsTwo.add(l);
 					selectedCardsTwo.add(m);

@@ -72,4 +72,6 @@ Yes, these methods do cover the diffrences because they specifically address the
 
 Activity 9 Questions:
 1) Because there are diffrences in the board size between elevens and thirteens; there is no has-a or is-a relationship between their sizes.
-2)
+2) Because the cards  differ between games and cannot be generalized
+3) Any class that would implement board would need to define its own isLegal and another PlayIsPossible. This design is stupid because not all games 
+that require a board need these two methods(ex. games where there is no requirement for play possibility. 
