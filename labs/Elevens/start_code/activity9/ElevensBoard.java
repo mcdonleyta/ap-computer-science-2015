@@ -52,9 +52,9 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean isLegal(List<Integer> selectedCards) {
-		for(Integer i: selectedCards) {
-			if(cardAt(i.intValue()) == null)
+	public boolean isLegal(List<Integer> selectedCards) { //Mr. M: This function should return true only if
+		for(Integer i: selectedCards) {               //  1) selectedCards.size() == 2 and containsPairSum11()
+			if(cardAt(i.intValue()) == null)      //  2) OR selectedCards.size(0 == 3 and containsJQK()
 				return false;
 		}
 		return containsJQK(selectedCards) || containsPairSum11(selectedCards);
@@ -69,8 +69,8 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean anotherPlayIsPossible() {
-		List<Integer> hh = new ArrayList(0);
+	public boolean anotherPlayIsPossible() {     //Mr. M: This implements what should be in containPairSum11 and containsJQK
+		List<Integer> hh = new ArrayList(0); 
 		for(int i = 0; i < BOARD_SIZE; i++) {
 			for(int j = 0; j < BOARD_SIZE; j++) {
 				hh.clear();
@@ -103,8 +103,8 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              contain an 11-pair; false otherwise.
 	 */
-	private boolean containsPairSum11(List<Integer> selectedCards) {
-		if(selectedCards.size() != 2)
+	private boolean containsPairSum11(List<Integer> selectedCards) { //Mr. M: This fuction doesn't assume selectedCards.size()==1
+		if(selectedCards.size() != 2)                            // instead, it checks if any 2 cards can sum to 11
 			return false;
 		if(cardAt(selectedCards.get(0).intValue()).pointValue() + cardAt(selectedCards.get(1).intValue()).pointValue() == 11)
 			return true;
@@ -119,7 +119,7 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
+	private boolean containsJQK(List<Integer> selectedCards) { //Mr. M: See comment above
 		if(selectedCards.size() != 3)
 			return false;
 		String s = "";
