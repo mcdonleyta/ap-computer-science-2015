@@ -1,0 +1,11 @@
+1.
+I saw a range within 0-30%.  The percentages never left this range and seemed to be fairly consistent.
+
+2.
+Yes.  I saw a range between 1-20%.  The numbers were even more consistent this time.
+
+3.
+When I increased the number of game to 1000000 I consistently got 10.7% games won.
+
+4.
+The simulation helps find bugs in the program, along with showing the win percentage over a number of games.
