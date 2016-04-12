@@ -1,3 +1,5 @@
+//Mr. M: 14/15 Make sure to implement the function based closely on the specifications and pre/post-conditions
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,8 +56,8 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
 
-		return containsPairSum11(selectedCards) || (containsJQK(selectedCards));
-		}
+		return containsPairSum11(selectedCards) || (containsJQK(selectedCards));   //MR. M: This is the code for anotherPlayIsPossible()
+		}                                                                          //We need to check containsPair or JQK based on how many cards are selected (2 or 3)
 
 		
 	
@@ -70,8 +72,8 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean anotherPlayIsPossible() {
-		ArrayList<Integer> selectedCards = new ArrayList<Integer>();
+	public boolean anotherPlayIsPossible() {  //Mr. M: This code can be simplified by calling containsSum11 and containsJQK
+		ArrayList<Integer> selectedCards = new ArrayList<Integer>(); 
 		for(int i = 0; i<BOARD_SIZE; i++) {
 			for(int j = 0; j<BOARD_SIZE;j++) {
 				selectedCards.clear(); //terrible solution but it works
@@ -108,8 +110,8 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              contain an 11-pair; false otherwise.
 	 */
-	private boolean containsPairSum11(List<Integer> selectedCards) {
-
+	private boolean containsPairSum11(List<Integer> selectedCards) { //Mr. M: This function finds if a pair exists in the selection not if
+                                                                         // all the selectedCards sum to 11
 		int sum=0;
 		if(selectedCards.size() != 2) {
 			return false;
@@ -136,8 +138,8 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
-
+	private boolean containsJQK(List<Integer> selectedCards) { //MR. M: This function need only scan the selected cards
+                                                                   // and make sure it has at least 1 J, Q, and K
 		int sum=0;
 		if(selectedCards.size()!=3)
 			return false;

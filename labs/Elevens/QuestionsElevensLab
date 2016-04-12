@@ -52,7 +52,7 @@ deal()
 checkWon()
 }
 
-3) No, because there is no getMove and player interfaces  //MR. M: Also removin  cards from the deck
+3) No, because there is no getMove and player interfaces  
 4)
 	a) when creating a new game and in the constructor
 	b) isLegal and anotherPlayIsPossible
@@ -61,7 +61,7 @@ checkWon()
 	e)  anotherPlayIsPossible because the cards get removed before it is called, leaving null.
 
 
-Activity 8 Questions:
+Activity 8 Questions: //MR. M: 10/10
 1) Thirteens is similar to elevens in that you need to find cards that add up to a number in a 10 card board. However, in 13s, kings are removed alone. Chances of winning 
 are said to be 1/2. In 10s, there is a 13 card board where pairs that add up to 10 are removed and also the 4 face cards of the same rank. Chances of winning are 1/8.
 
@@ -69,6 +69,8 @@ are said to be 1/2. In 10s, there is a 13 card board where pairs that add up to 
 
 3) Abstract Methods: isLegal, anotherPlayISPossible
 Yes, these methods do cover the diffrences because they specifically address the diffrences in rules between the games. This method won't work for the other games; you would need to create a new method.
+//Mr. M: The abstract methods will have to be implemented differently in the Tens and Thirteens
+games and will need different private helper methods to accomplish their tasks.
 
 Activity 9 Questions:
 1) Because there are diffrences in the board size between elevens and thirteens; there is no has-a or is-a relationship between their sizes.
