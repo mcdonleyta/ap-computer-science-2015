@@ -1,3 +1,5 @@
+//MR. M: 10/10
+
 1. Elevens requires players to either pair two card together to get an 11 or
 to pair together a king, queen, and jack. Thirteens requires that two cards
 be paired to form a 13. Kings can be pulled out automatically. In Tens two cards
@@ -10,3 +12,6 @@ are passed on to the abstract board.
 3. They would incorporate the rules that were described above. However the code
 has not yet been implemented, so therfore there is no difference. The only code
 we have is for the ElevensBoard, so Elevens will be the only code that can work
+
+//MR. M: The abstract methods will have to be implemented differently in the Tens and Thirteens
+games and will need different private helper methods to accomplish their tasks.
