@@ -1,3 +1,5 @@
+//MR. M: 14/15
+
 package activity9;
 import java.util.List;
 import java.util.ArrayList;
@@ -53,9 +55,9 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean isLegal(List<Integer> selectedCards) {
-		for(int k : selectedCards)
-			if(cardAt(k) == null)
+	public boolean isLegal(List<Integer> selectedCards) {   //MR. M: For a selection to be legal it is either:
+		for(int k : selectedCards)			//    1) of size 2 and containsPairSum11
+			if(cardAt(k) == null)                   // OR 2) of size 3 and containsJQK
 				return false;
 		return containsPairSum11(selectedCards) || containsJQK(selectedCards);
 	}
@@ -69,7 +71,7 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean anotherPlayIsPossible() {
+	public boolean anotherPlayIsPossible() {     //MR. M: This code duplicates helper code containsPairSumII and containsJQK
 		for(int a = 0; a < 8; a++)
 			for(int b = a+1; b < 9; b++) {
 				ArrayList<Integer> list = new ArrayList<>();
@@ -100,8 +102,8 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              contain an 11-pair; false otherwise.
 	 */
-	private boolean containsPairSum11(List<Integer> selectedCards) {
-		if(selectedCards.size() == 2)
+	private boolean containsPairSum11(List<Integer> selectedCards) {  //MR. M: This functions isn't supposed to just check if the 
+		if(selectedCards.size() == 2)                             // first two cards sum to 11. But instead, if ANY two cards in the selection with size >= 2 sum to 11
 			return cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue() == 11;
 		return false;
 	}
@@ -114,7 +116,7 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
+	private boolean containsJQK(List<Integer> selectedCards) { //Mr. M: Neat solution
 		if(selectedCards.size() == 3) {
 			String ranks = "";
 			for (int k : selectedCards)
