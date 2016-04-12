@@ -1,3 +1,5 @@
+//MR. M: 10/10
+
 1.
 They both use a board with the same set of cards, however they use different
 rules and board sizes.
@@ -6,3 +8,5 @@ The ElvensBoard class can access all of the values from Board because
 they are public.
 3.
 It will only work for elevens.
+//MR. M: The abstract methods will have to be implemented differently in the Tens and Thirteens
+games and will need different private helper methods to accomplish their tasks.
