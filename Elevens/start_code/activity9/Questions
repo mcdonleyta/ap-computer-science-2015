@@ -10,4 +10,5 @@ the contents of cards which is universal to all the games.
 constructor may need to be modified because the interface cannot have a
 constructor.
 
-//Mr. M: It wont work because Board has non-abstract functions and private variables
+//Mr. M: It wont work because Board has non-abstract functions and private variables which aren't allowed 
+// in an interface
