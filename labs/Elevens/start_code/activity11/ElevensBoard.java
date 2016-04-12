@@ -116,6 +116,7 @@ public class ElevensBoard extends Board {
 		int queenLoc=-1;
 		int kingLoc=-1;
 		for (Integer kObj : selectedCards) {
+			if(kObj != null) {
 			int k = kObj.intValue();
 			if (cardAt(k).rank().equals("jack")) {
 				jackLoc=k;
@@ -125,6 +126,7 @@ public class ElevensBoard extends Board {
 				kingLoc = k;
 			}
 		}
+	}
 		if(jackLoc == -1 || queenLoc == -1 || kingLoc == -1) {
 			return ret;
 		}
@@ -142,13 +144,16 @@ public class ElevensBoard extends Board {
 	 */
 	public boolean playIfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		if(playPairSum11IfPossible() || playJQKIfPossible()) {
+		if(anotherPlayIsPossible()) {
+		boolean jqk =playJQKIfPossible();
+		boolean eleven = playPairSum11IfPossible();
+		if(eleven || jqk){
 			return true;
 		}
-		else
-			return false;
-		
+		}
+		return false;
 	}
+
 
 	/**
 	 * Looks for a pair of non-face cards whose values sum to 11.
@@ -158,6 +163,7 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean playPairSum11IfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
+		
 		List<Integer> pair = findPairSum11(this.cardIndexes());
 		if(pair.size() !=0) {
 			replaceSelectedCards(pair);
