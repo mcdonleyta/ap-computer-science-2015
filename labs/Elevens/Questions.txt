@@ -118,6 +118,8 @@ Activity 9:
 2. The methods for dealing and removing the cards will behave the same in both games. Because of this, the methods do not need to be declared as abstract.
 
 3. This alternate design could work. The methods, isLegal() and anotherPlayIsPossible(), will still be called polymorphically. However, all other non-abstract methods in the Board() class will need to be defined seperately in both classes. 
+//Mr. M: Also any private variables.
+
 
 Activity 10:
 
