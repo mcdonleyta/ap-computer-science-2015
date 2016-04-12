@@ -1,7 +1,13 @@
 1. size is not an abstract method because the deck size is always
 the same. 
+//Mr. M: This question isn't talking about deck size but board size. The board size is 
+//  simply supplied as an argument to the constructor
+
 2.  cards is an array of cards that is intervened with by methods that modify
 the contents of cards which is universal to all the games.
+
 3. I believe it would work fine, but the use of super in ElevensBoard
 constructor may need to be modified because the interface cannot have a
 constructor.
+
+//Mr. M: It wont work because Board has non-abstract functions and private variables
