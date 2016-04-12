@@ -1,3 +1,5 @@
+//Mr. M: 14/15
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -52,8 +54,9 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean isLegal(List<Integer> selectedCards) {
-		boolean ret = false;
+	public boolean isLegal(List<Integer> selectedCards) { //Mr. M: This function checks if the selected cards form a legal move
+		boolean ret = false;                          //   so it returns true if 1) containsPairSum11() AND selectedCards.size() == 2
+		                                              //   OR if 2) containsJQK and selectedCards.size() == 3
 		if(containsPairSum11(selectedCards) == true || containsJQK(selectedCards) == true)
 			ret = true;
 		return ret;
@@ -68,8 +71,8 @@ public class ElevensBoard extends Board {
 	 *         false otherwise.
 	 */
 	@Override
-	public boolean anotherPlayIsPossible() {
-		List<Integer> cardIndexes = cardIndexes();
+	public boolean anotherPlayIsPossible() {                 //Mr. M: This duplicates the code/functionality from 
+		List<Integer> cardIndexes = cardIndexes();       // containsPairSum11() and containsJQK()
 		List<Integer> cardPossibilities = new ArrayList<Integer>();
 		for(int i=0; i<cardIndexes.size(); i++){
 			for(int j=i; j<cardIndexes.size(); j++){
@@ -105,8 +108,8 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              contain an 11-pair; false otherwise.
 	 */
-	private boolean containsPairSum11(List<Integer> selectedCards) {
-		boolean ret = false;
+	private boolean containsPairSum11(List<Integer> selectedCards) { //Mr.M This function does not assume the selectedCards.size() == 2
+		boolean ret = false;                                     // instead it checks if ANY two cards in selected sum to 11
 		if(selectedCards.size()==2){
 			if(cardAt(selectedCards.get(0)).pointValue() + cardAt(selectedCards.get(1)).pointValue() == 11)
 				ret = true;
@@ -122,7 +125,7 @@ public class ElevensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
+	private boolean containsJQK(List<Integer> selectedCards) { //MR. M: See comment above
 		boolean ret = false;
 		if(selectedCards.size()==3){
 			if(cardAt(selectedCards.get(0)).pointValue() == 0 && cardAt(selectedCards.get(1)).pointValue() == 0 && cardAt(selectedCards.get(2)).pointValue() == 0){
