@@ -1,5 +1,7 @@
 1. Because the function size() returns the length of the array "cards", which is dependent on the game being played. There's no need for size() to be abstract, beccause it should be the same function for elevens, tens, and thirteens.
+//Mr. M: And the size value is set by passing it into the constructor
 
 2. Because all of the related functions are usable for an array "cards" of any size, making each function reusable for all games similar to elevens.
+
 
 3. Implementing the Board class as an interface would force any program using Board to override and implement the functions isLegal and anotherPlayIsPossible. Not all things that are boards require those two functions. Additionally, an abstract Board class allows Board to contain much more Board-related information, like the card array, the deck, and functions related to both of these. This is helpful for code reuse, since each class inheriting from the abstract Board class doesn't need to rewrite every one of those functions and states. 
