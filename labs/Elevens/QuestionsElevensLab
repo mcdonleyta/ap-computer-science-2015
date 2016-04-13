@@ -74,6 +74,15 @@ games and will need different private helper methods to accomplish their tasks.
 
 Activity 9 Questions:
 1) Because there are diffrences in the board size between elevens and thirteens; there is no has-a or is-a relationship between their sizes.
+//Mr. M: Because the board size is passed in to the constructor and doesn't change
 2) Because the cards  differ between games and cannot be generalized
+//Mr. M: Selecting cards doesn't different between games
 3) Any class that would implement board would need to define its own isLegal and another PlayIsPossible. This design is stupid because not all games 
 that require a board need these two methods(ex. games where there is no requirement for play possibility. 
+//Mr. M: Yes, an interface would allow the CardGameGUI class to call isLegal and
+anotherPlayIsPossible polymorphically. It would not work as well. The private instance variables shared by all boards cannot be
+declared in an interface, and methods cannot be implemented in an interface. All of the boards
+share behaviors that can be coded without knowing which kind of board it is. If an interface were
+used instead of an abstract class, each subclass of Board would have to declare their own
+private instance variables and rewrite the same implementations for the commonly shared
+methods.
