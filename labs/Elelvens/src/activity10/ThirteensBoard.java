@@ -1,3 +1,5 @@
+//Mr. M: 15/15
+
 package activity10;
 
 import java.util.List;
@@ -95,7 +97,7 @@ public class ThirteensBoard extends Board {
                 int k2 = selectedCards.get(sk2).intValue();
                 if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 13)
                     return true;
-                else if(cardAt(k1).pointValue() == 2 && cardAt(k2).rank().equals("jack"))
+                else if(cardAt(k1).pointValue() == 2 && cardAt(k2).rank().equals("jack")) //Mr. M: Not needed as jack and queen have pointValue()
                     return true;
                 else if(cardAt(k2).pointValue() == 2 && cardAt(k1).rank().equals("jack"))
                     return true;
