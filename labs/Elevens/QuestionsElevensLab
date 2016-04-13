@@ -86,3 +86,27 @@ share behaviors that can be coded without knowing which kind of board it is. If 
 used instead of an abstract class, each subclass of Board would have to declare their own
 private instance variables and rewrite the same implementations for the commonly shared
 methods.
+
+Activity 11 Questions:
+1) 
+Trial 1: 20%
+Trial 2: 10%
+Trial 3: 10%
+Trial 4: 20%
+Trial 5: 30%
+Range: 20%
+Median: 20%
+Not very consisent
+2) 
+Trial 1: 12%
+Trial 2: 8%
+Trial 3: 16%
+Trial 4: 12%
+Trial 5: 8%
+Seems to be centered around 11%
+
+3) Running simulation 10000 times yields results of about 11%, with a deviation of about .2.
+     Running simulation 100000 times yields results of 11% the 5 times I tried it.
+
+4) Simulation is helpful here because it helps isolate bugs; I had an infinite loop bug that only occured once every 10ish times. I would not have picked up 
+on this bug if I had just tried to test manually.

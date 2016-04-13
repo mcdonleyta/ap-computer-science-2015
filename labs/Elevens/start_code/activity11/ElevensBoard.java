@@ -92,8 +92,8 @@ public class ElevensBoard extends Board {
 			for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
 				int k2 = selectedCards.get(sk2).intValue();
 				if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11) {
-					ret.add(sk1);
-					ret.add(sk2);
+					ret.add(k1);
+					ret.add(k2);
 					return ret;
 				}
 			}
@@ -154,7 +154,7 @@ public class ElevensBoard extends Board {
 	private boolean playPairSum11IfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
 		
-		List<Integer> pair = findPairSum11(this.cardIndexes());
+		List<Integer> pair = findPairSum11(cardIndexes());
 		if(pair.size() == 2) {
 			replaceSelectedCards(pair);
 			return true;
@@ -171,7 +171,7 @@ public class ElevensBoard extends Board {
 	 */
 	private boolean playJQKIfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		List<Integer> triplet = findJQK(this.cardIndexes());
+		List<Integer> triplet = findJQK(cardIndexes());
 		if(triplet.size() ==3) {
 			replaceSelectedCards(triplet);
 			return true;
