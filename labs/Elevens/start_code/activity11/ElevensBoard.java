@@ -86,7 +86,7 @@ public class ElevensBoard extends Board {
 	 */
 	private List<Integer> findPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE CHANGED INTO findPairSum11 IN ACTIVITY 11 *** */
-		List<Integer> ret = new ArrayList<Integer>();
+		List<Integer> ret = new ArrayList<Integer>(0);
 		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
 			int k1 = selectedCards.get(sk1).intValue();
 			for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
@@ -116,7 +116,7 @@ public class ElevensBoard extends Board {
 		int queenLoc=-1;
 		int kingLoc=-1;
 		for (Integer kObj : selectedCards) {
-			if(kObj != null) {
+			if(cardAt(kObj.intValue()) != null) {
 			int k = kObj.intValue();
 			if (cardAt(k).rank().equals("jack")) {
 				jackLoc=k;
@@ -127,15 +127,12 @@ public class ElevensBoard extends Board {
 			}
 		}
 	}
-		if(jackLoc == -1 || queenLoc == -1 || kingLoc == -1) {
-			return ret;
-		}
-		else{
+		if(jackLoc != -1 && queenLoc != -1 && kingLoc != -1) {
 			ret.add(jackLoc);
 			ret.add(queenLoc);
 			ret.add(kingLoc);
-			return ret;
 		}
+	return ret;
 	}
 
 	/**
@@ -144,14 +141,7 @@ public class ElevensBoard extends Board {
 	 */
 	public boolean playIfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		if(anotherPlayIsPossible()) {
-		boolean jqk =playJQKIfPossible();
-		boolean eleven = playPairSum11IfPossible();
-		if(eleven || jqk){
-			return true;
-		}
-		}
-		return false;
+		return playPairSum11IfPossible() || playJQKIfPossible();
 	}
 
 
@@ -165,7 +155,7 @@ public class ElevensBoard extends Board {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
 		
 		List<Integer> pair = findPairSum11(this.cardIndexes());
-		if(pair.size() !=0) {
+		if(pair.size() == 2) {
 			replaceSelectedCards(pair);
 			return true;
 		}
@@ -182,7 +172,7 @@ public class ElevensBoard extends Board {
 	private boolean playJQKIfPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
 		List<Integer> triplet = findJQK(this.cardIndexes());
-		if(triplet.size() !=0) {
+		if(triplet.size() ==3) {
 			replaceSelectedCards(triplet);
 			return true;
 		}
