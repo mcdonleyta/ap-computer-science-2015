@@ -1,3 +1,5 @@
+//Mr. M: 13/15 Incorrect implementation of solitary King in 13's
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -58,7 +60,7 @@ public class ThirteensBoard extends Board {
 		}
 		else if (selectedCards.size() == 2) {
 			return containsPairSum13(selectedCards);
-		} else if (selectedCards.size() == 3) {
+		} else if (selectedCards.size() == 3) {    //Mr. M: This should check if only one card selected is a King
 			return containsJQK(selectedCards);
 		} else {
 			return false;
@@ -108,8 +110,8 @@ public class ThirteensBoard extends Board {
 	 * @return true if the board entries in selectedCards
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
-		boolean foundJack = false;
+	private boolean containsJQK(List<Integer> selectedCards) {  //MR. M: 13's removes Kings by itself. The JQK group is specific to 
+		boolean foundJack = false;                          // elevens. In 13's J and Q can only be removed as part of a sum to 13 group
 		boolean foundQueen = false;
 		boolean foundKing = false;
 		for (Integer kObj : selectedCards) {
