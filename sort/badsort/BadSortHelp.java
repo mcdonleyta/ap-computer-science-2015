@@ -1,5 +1,7 @@
 package badsort;
 public class BadSortHelp {
+	public int loopsLooped;
+	public long comparisons;
 	public int[] randSort(int[] input) {
 		while(!isSorted(input)) {
 			int randOne; 
@@ -11,6 +13,7 @@ public class BadSortHelp {
 		 }
 		 swap(input,randOne,randTwo); // yes i am swapping one by one #yolo 
 									  //(honestly i could live several lives in the time it takes to run)
+		loopsLooped++;
 		}
 		return input;
 	}
@@ -18,6 +21,7 @@ public class BadSortHelp {
 	for (int i = 0; i < input.length - 1; i++) {
         if (input[i] > input[i + 1]) 
             return false; 
+        comparisons++;
     }
     return true;
 		}
