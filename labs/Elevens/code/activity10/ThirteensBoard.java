@@ -20,20 +20,19 @@ public class ThirteensBoard extends Board {
 	private static final String[] SUITS =
 		{"spades", "hearts", "diamonds", "clubs"};
 
-	/**
-	 * The values of the cards for this game to be sent to the deck.
-	 */
+	/****************************************************************
+	 * The values of the cards for this game to be sent to the deck.*
+	 ****************************************************************/
 	private static final int[] POINT_VALUES =
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 0};
 
 	/**
 	 * Flag used to control debugging print statements.
 	 */
 	private static final boolean I_AM_DEBUGGING = false;
 
-
 	/**
-	 * Creates a new <code>ElevensBoard</code> instance.
+	 * Creates a new <code>ThirteensBoard</code> instance.
 	 */
 	 public ThirteensBoard() 
 	 {
@@ -43,7 +42,7 @@ public class ThirteensBoard extends Board {
 	/**
 	 * Determines if the selected cards form a valid group for removal.
 	 * In Elevens, the legal groups are (1) a pair of non-face cards
-	 * whose values add to 11, and (2) a group of three cards consisting of
+	 * whose values add to 13, and (2) a group of three cards consisting of
 	 * a jack, a queen, and a king in some order.
 	 * @param selectedCards the list of the indices of the selected cards.
 	 * @return true if the selected cards form a valid group for removal;
@@ -52,10 +51,14 @@ public class ThirteensBoard extends Board {
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) 
 	{
-		if (selectedCards.size() > 0 && selectedCards.size() < 3) 
+		if (selectedCards.size() > 0 && selectedCards.size() < 2) 
+		{
+			return containsK(selectedCards);
+		}else
+		if(selectedCards.size() > 1 && selectedCards.size() < 3)
 		{
 			return containsPairSum13(selectedCards);
-		}else 
+		}else
 		{
 			return false;
 		}
@@ -73,7 +76,8 @@ public class ThirteensBoard extends Board {
 	public boolean anotherPlayIsPossible() 
 	{
 		List<Integer> cIndexes = cardIndexes();
-		if(containsPairSum13(cIndexes) == true) //|| containsK(cIndexes) == true)
+
+		if(containsPairSum13(cIndexes) == true || containsK(cIndexes) == true)
 		{
 			return true;
 		}else
@@ -93,18 +97,17 @@ public class ThirteensBoard extends Board {
 	private boolean containsPairSum13(List<Integer> selectedCards) 
 	{
 		boolean r = false;
-		if(selectedCards.size() == 1)
+
+		for(int i = 0; i < selectedCards.size(); i++)
 		{
-			r = containsK(selectedCards);
-		}else
-		if(selectedCards.size() == 2)
-		{
-			if(cardAt(0).pointValue() + cardAt(1).pointValue() == 13)
+			int one = selectedCards.get(i).intValue();
+			for(int j = i + 1; j < selectedCards.size(); j++)
 			{
-				r = true;
-			}else
-			{
-				r = false;
+				int two = selectedCards.get(j).intValue();
+				if(cardAt(one).pointValue() + cardAt(two).pointValue() == 13)
+				{
+					r = true;
+				}
 			}
 		}
 
@@ -121,18 +124,18 @@ public class ThirteensBoard extends Board {
 	 */
 	private boolean containsK(List<Integer> selectedCards) 
 	{
-		/*if(selectedCards.size() != 1)
+		boolean r = false;
+		
+		int find = 0;
+		for(int i = 0; i < selectedCards.size(); i++)
 		{
-			return false;
-		}*/
-		boolean king = false;
-
-		if(cardAt(selectedCards.get(0)).rank().equals("king"))
-		{
-			return true;
-		}else
-		{
-			return false;
+			find = selectedCards.get(i);
+			if(cardAt(find).rank().equals("king"))
+			{
+				r = true;
+			}
 		}
+
+		return r;
 	}
 }
