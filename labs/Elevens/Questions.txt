@@ -101,13 +101,15 @@ Activity 7: Mr. M: 15/15
 
    e. isLegal(), this is to check if the two cards selected, unless it is a triple face card, will have a sum of eleven and that cards need to be dealt from the deck.
 
-Activity 8:
+Activity 8: //MR. M: 10/10
 
 1. These three games, Tens, Elevens, and Thirteens, have the player make pairs that sum to the name of the game. All games use the same functions, such as isLegal(), anotherPLayIsPossible(), dealCards(), and the Board() constructor. However, some functions are going to implement different methods. For example, isLegal() is going to check that the pair equal to the sum of the game. The only different function is the function containsJQK(), which is only for the game Elevens. 
 
 2. The subclass, ElevensBoard, passes these values to the parent class, Board, by calling the constructor of the parent class and passing the values through the constructor to then set the variables in the parent class. 
 
 3. Yes, the abstract Board class can be implemented by all three games, as all three games use same methods, such as isLegal(),just checks to make sure the pair can be made and anotherPlayIsPossible(), which checks for another pair on the board, though the methods need to be rewritten to accomodate the rules of the game. While the ElevensBoard has another function, containsJQK(), it is only accessed by this class.
+   //MR. M: The abstract methods will have to be implemented differently in the Tens and Thirteens
+games and will need different private helper methods to accomplish their tasks.
 
 Activity 9:
 
@@ -116,6 +118,8 @@ Activity 9:
 2. The methods for dealing and removing the cards will behave the same in both games. Because of this, the methods do not need to be declared as abstract.
 
 3. This alternate design could work. The methods, isLegal() and anotherPlayIsPossible(), will still be called polymorphically. However, all other non-abstract methods in the Board() class will need to be defined seperately in both classes. 
+//Mr. M: Also any private variables.
+
 
 Activity 10:
 
